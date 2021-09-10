@@ -1,24 +1,32 @@
-# README
+# recipe_log
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+簡単な料理レシピを発信・共有・確認することができます。
+いいね機能・コメント機能あり
+このサイトを見ることで食事のメニューの参考にすることができます。
 
-Things you may want to cover:
+### サイトテーマ
+いつでも料理レシピの発信と確認ができる投稿サイト
 
-* Ruby version
+### テーマを選んだ理由
+コロナ禍により外出が減り、自宅で食事をする頻度が増加しているため現在の世の中に需要があると思ったため。
 
-* System dependencies
+### ターゲットユーザ
+一人暮らしの学生・社会人
 
-* Configuration
+### 主な利用シーン
+忙しい日やメニューが決まっていないときに利用できる。
 
-* Database creation
+## 設計書
+ER図 <https://drive.google.com/file/d/165hI0Nx-qnlARy6GOfLX1bqmD1h2J6rd/view?usp=sharing>
 
-* Database initialization
+テーブル設計書 <https://docs.google.com/spreadsheets/d/1ZkVoj8-T3HHliRJkbsj_E_qtF2uoy6MxOn7VzNUxeDI/edit?usp=sharing>
 
-* How to run the test suite
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1q71ynNRT0uZN5rcGCbWOVlelaS1APZf8qNbp7_FfUCE/edit?usp=sharing>
 
-* Services (job queues, cache servers, search engines, etc.)
+## 開発環境
+ruby/Ruby on Rails/html/scss/javascript/MySQL/Github/AWS
 
-* Deployment instructions
-
-* ...
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
