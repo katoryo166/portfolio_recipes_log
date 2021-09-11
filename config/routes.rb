@@ -1,29 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'users/index'
-    get 'users/show'
-    get 'users/edit'
-  end
-  namespace :admin do
-    get 'genres/index'
-    get 'genres/edit'
-  end
-  get 'homes/top'
-  get 'homes/about'
-  namespace :admin do
-    get 'post_recipes/index'
-    get 'post_recipes/show'
-    get 'post_recipes/edit'
-  end
-  get 'post_recipes/index'
-  get 'post_recipes/show'
-  get 'post_recipes/new'
-  get 'post_recipes/edit'
-  get 'users/show'
-  get 'users/edit'
-  get 'users/favorite_list'
-  get 'users/unsubscribe'
   devise_for :admins, :controllers => {
     :sessions => 'admin/admins/sessions',
     :registrations => 'admin/admins/registrations',
@@ -35,5 +11,28 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :passwords => 'users/passwords'
   }
+
+  namespace :admin do
+    resources :post_recipes, only:[:index, :show, :edit, :update, :destroy]
+    resources :genres, only:[:index, :create, :edit, :update]
+    resources :users, only:[:index, :show, :edit, :update, :destroy]
+  end
+
+  resources :post_recipes, only:[:index, :show, :new, :create, :edit, :update, :destroy] do
+    resource :favorites, only:[:create, :destroy]
+    resources :post_comments, only:[:create, :destroy]
+  end
+
+  resources :users, only:[:show, :edit, :update]
+    resource :users,only: [:show] do
+    	collection do
+    		get 'favorite_list' => 'users#favorite_list',  as:'favorite_list'
+    	  get 'unsubscribe/:id' => 'users#unsubscribe',  as:'confirm_unsubscribe'
+    	  patch 'withdraw/:id' => 'users#withdraw', as: 'withdraw'
+    	 end
+    end
+
+  root 'homes#top'
+  get 'homes/about'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
