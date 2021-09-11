@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     :passwords => 'admin/admins/passwords'
    }
 
-  devise_for :users, :controller =>{
+  devise_for :users, :controllers =>{
     :sessions => 'users/sessions',
     :registrations => 'users/registrations',
     :passwords => 'users/passwords'
