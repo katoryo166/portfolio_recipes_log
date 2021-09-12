@@ -6,6 +6,6 @@ class User < ApplicationRecord
 
 
   has_many :post_recipes, dependent: :destroy
-  
+  attachment :account_image
 
 end

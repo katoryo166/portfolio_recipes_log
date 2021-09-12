@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-12 col-xs-12 offset-md-1">
+    <h2>アカウント情報編集</h2>
+    <%= form_with model:@user, url:user_path, local:true do |f| %>
+      <div>
+
+        <%= f.attachment_field :account_image, placeholder: "プロフィール画像" %>
+      </div>
+      <table class="table table-bordered table-condensed">
+        <tr>
+          <th><%= f.label:"名前" %></th>
+          <td><%= f.text_field :name, autofoucus: true %></td>
+        </tr>
+        <tr>
+          <th><%= f.label:"自己紹介文" %></th>
+          <td><%= f.text_area :introduction, autofoucus: true %></td>
+        </tr>
+      </table>
+
+      <div class="acctions col-xs-10 col-xs-offset-2">
+        <%= f.submit "変更する" %>
+      </div>
+    <% end %>
+  </div>
+</div>

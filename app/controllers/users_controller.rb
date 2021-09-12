@@ -2,17 +2,18 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
-  def upadate
-    if user.update(user_params)
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
       flash[:notice] = "登録情報を変更しました。"
-      redirect_to user_path(user)
+      redirect_to user_path(@user)
     else
       render :edit and return
     end
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :introduction)
+    params.require(:user).permit(:name, :introduction, :account_image_id)
   end
 
 end
