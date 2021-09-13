@@ -19,7 +19,8 @@
       </table>
 
       <div class="acctions col-xs-10 col-xs-offset-2">
-        <%= f.submit "変更する" %>
+        <%= f.submit "変更する", class:"btn btn-success"%>
+        <%= link_to "退会する", confirm_unsubscribe_users_path, "data-confirm" => "退会画面に進みますか?", class:"btn btn-danger" %>
       </div>
     <% end %>
   </div>

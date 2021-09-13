@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-12 col-xs-12 offset-md-1">
+    <h2>本当に退会されますか？</h2>
+    <div class="field">
+      退会するとアカウント登録情報や自身の投稿が出来なくなります。
+    </div>
+    <div class="field">
+      <%= link_to "退会しない", user_path(current_user.id), class: "btn btn-primary" %>
+      <%= link_to "退会する",  withdraw_users_path(@user), method: :patch, class: "btn btn-danger", "data-confirm"=>"退会しますか？" %>
+     </div>
+  </div>
+</div>

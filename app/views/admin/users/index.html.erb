@@ -9,13 +9,23 @@
           <th>ステータス</th>
         </tr>
       </thead>
+      <% @users.each do |user| %>
       <tbody>
-        <% @users.each do |user| %>
-        <td><%= user.name %></td>
+        <td>
+          <%= link_to admin_user_path(user.id) do %>
+            <%= user.name %>
+          <% end %>
+        </td>
         <td><%= user.email %></td>
-        <td></td>
-        <% end %>
+        <td>
+          <% if user.is_active == true %>
+            <p class="text-success">有効</p>
+          <% else %>
+            <p class="text-danger">無効</p>
+          <% end %>
+        </td>
       </tbody>
+      <% end %>
     </table>
   </div>
 </div>
