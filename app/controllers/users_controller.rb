@@ -7,16 +7,21 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+      if @user = current_user
+        render "edit"
+      else
+        redirect_to user_path(current_user)
+      end
   end
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      flash[:notice] = "登録情報を変更しました。"
-      redirect_to user_path(@user)
-    else
-      render :edit and return
-    end
+      if @user.update(user_params)
+        flash[:notice] = "登録情報を変更しました。"
+        redirect_to user_path(@user)
+      else
+        render :edit and return
+      end
   end
 
   def favorite_list
@@ -28,7 +33,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :introduction, :account_image_id)
+    params.require(:user).permit(:name, :introduction, :account_image)
   end
 
 end

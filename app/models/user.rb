@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :post_recipes, dependent: :destroy
   attachment :account_image
 
+  validates :name, presence: true,  length: { minimum: 2, maximum:20}
+  validates :introduction, length: { maximum: 50}
+
 end
