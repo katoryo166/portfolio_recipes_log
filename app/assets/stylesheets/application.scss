@@ -17,6 +17,39 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .container{
   margin: 20px auto;
+  width: 100%;
+  height: 100%;
+}
+
+/*renderでフォームの崩れを防止*/
+.field_with_errors {
+  display: contents;
+}
+
+.form_group{
+  margin: 20px 0;
+}
+
+/*footer*/
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #333;
+
+  p{
+    margin: 40px auto;
+    text-align: center;
+    color: #fff;
+  }
 }
