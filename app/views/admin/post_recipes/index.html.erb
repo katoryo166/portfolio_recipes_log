@@ -10,14 +10,16 @@
           <th>ジャンル  </th>
         </tr>
       </thead>
-
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-
+      <% @post_recipes.each do |post_recipe| %>
+          <tbody>
+            <tr>
+              <td><%= post_recipe.id %></td>
+              <td><%= post_recipe.user.name %></td>
+              <td><%= post_recipe.title %></td>
+              <td><%= post_recipe.genre.name %></td>
+            </tr>
+          </tbody>
+      <% end %>
     </table>
   </div>
 </div>

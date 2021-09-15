@@ -3,11 +3,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @post_recipes = @user.post_recipes.all
   end
 
   def edit
     @user = User.find(params[:id])
-      if @user = current_user
+      if @user == current_user
         render "edit"
       else
         redirect_to user_path(current_user)
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
         flash[:notice] = "登録情報を変更しました。"
         redirect_to user_path(@user)
       else
-        render :edit and return
+       render "edit"
       end
   end
 

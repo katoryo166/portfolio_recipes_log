@@ -1,2 +1,10 @@
-<h1>PostRecipes#show</h1>
-<p>Find me in app/views/post_recipes/show.html.erb</p>
+<div class="row">
+  <div class="col-md-12 col-xs-12 offset-md-1">
+    <h2>投稿詳細</h2>
+    <p id="notice" class="text-success"><%= flash[:notice] %></p>
+    <div><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "100x100"%></div>
+    <div class="field">
+      <%= @post_recipe.title %>
+    </div>
+  </div>
+</div>

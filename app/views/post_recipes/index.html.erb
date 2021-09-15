@@ -1,2 +1,24 @@
-<h1>PostRecipes#index</h1>
-<p>Find me in app/views/post_recipes/index.html.erb</p>
+<div class="row">
+  <div class="col-md-12 col-xs-12 offset-md-1">
+    <h2>投稿一覧</h2>
+  </div>
+</div>
+<div class="row">
+  <% @post_recipes.each do |post_recipe| %>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card md-3">
+        <div class="card-body">
+          <%= link_to user_path(post_recipe.id) do %>
+            <%= post_recipe.user.name %></td>
+          <% end %>
+          <%= link_to post_recipe_path(post_recipe.id) do %>
+          <%= attachment_image_tag post_recipe, :image ,format: 'jpeg',class: "bd-placeholder-img card-img-top", size: "200x200" %>
+            <%= post_recipe.title %>
+          <% end %>
+          <p><%= post_recipe.genre.name %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
