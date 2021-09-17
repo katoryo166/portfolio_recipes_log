@@ -1,6 +1,6 @@
-<h2>マイページ</h2>
 <div class="row">
   <div class="col-md-8 col-xs-12 offset-md-1">
+    <h2>マイページ</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
     <div><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "100x100"%></div>
     <table class="table">
@@ -14,12 +14,12 @@
       </tr>
       <tr>
         <td><%= link_to "編集する", edit_user_path %></td>
-        <td>いいねした投稿</td>
+        <td><%= link_to favorite_list_users_path do %>いいねした投稿<% end %></td>
       </tr>
     </table>
     </div>
   </div>
-  
+
 <div class="row">
   <% @post_recipes.each do |post_recipe| %>
     <div class="col-12 col-md-6 col-lg-4">
@@ -29,7 +29,11 @@
           <%= attachment_image_tag post_recipe, :image ,format: 'jpeg',class: "bd-placeholder-img card-img-top", size: "200x200" %>
             <%= post_recipe.title %>
           <% end %>
-          <p><%= post_recipe.genre.name %></p>
+          <p>
+            <%= post_recipe.genre.name %><br />
+            <span class="favorite_heart">♥</span><%= post_recipe.favorites.count %>
+            コメント<%= post_recipe.post_comments.count %>
+          </p>
         </div>
       </div>
     </div>

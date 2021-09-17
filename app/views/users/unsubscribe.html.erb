@@ -6,7 +6,7 @@
     </div>
     <div class="field">
       <%= link_to "退会しない", user_path(current_user.id), class: "btn btn-primary" %>
-      <%= link_to "退会する",  withdraw_users_path(@user), method: :patch, class: "btn btn-danger", "data-confirm"=>"退会しますか？" %>
+      <%= link_to "退会する", withdraw_users_path(@user), method: :patch, class:"btn btn-danger", "data-confirm" => "本当に退会してもよろしいですか？" %>
      </div>
   </div>
 </div>

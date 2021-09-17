@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12 col-md-10 offset-md-1">
-    <h2>Sign up</h2>
+    <h2>新規登録</h2>
 
     <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
@@ -28,8 +28,8 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
       </div>
 
-      <div class="actions">
-        <%= f.submit "Sign up" %>
+      <div class="form_group">
+        <%= f.submit "登録", class:"btn btn-success" %>
       </div>
     <% end %>
 

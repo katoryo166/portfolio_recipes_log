@@ -21,6 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 1.1rem;
 }
 
 #wrapper{
@@ -44,9 +45,38 @@
   margin: 40px 0;
 }
 
+/*投稿*/
 .card {
   margin: 20px auto;
   max-width: 300px;
+}
+.favorite_heart{ color: #ff6699;}
+
+/*投稿詳細ページ*/
+.col-xs-5{
+  margin: 20px auto;
+
+  .recipe_img{
+  margin: 0 0 20px 0;
+  }
+}
+
+.ingredient{
+  height: auto;
+  margin: 20px auto;
+  border: 1px solid #999;
+  p{
+
+
+    padding: 5px  20px ;
+  }
+}
+
+.post_introduction{
+
+  p{
+    width: 100%;
+  }
 }
 
 

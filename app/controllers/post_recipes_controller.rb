@@ -20,6 +20,7 @@ class PostRecipesController < ApplicationController
 
   def show
     @post_recipe = PostRecipe.find(params[:id])
+    @post_comment = PostComment.new
   end
 
   def new
@@ -27,8 +28,26 @@ class PostRecipesController < ApplicationController
     @genres = Genre.all
   end
 
-
   def edit
+    @post_recipe = PostRecipe.find(params[:id])
+    @genres = Genre.all
+    if current_user == @post_recipe.user
+      render "edit"
+    else
+      redirect_to post_recipe_path(@post_recipe)
+    end
+  end
+
+  def update
+    @post_recipe = PostRecipe.find(params[:id])
+    @genres = Genre.all
+      if @post_recipe.update(post_recipe_params)
+        flash[:notice] = "投稿を更新しました。"
+        redirect_to post_recipe_path(@post_recipe)
+      else
+        @genres = Genre.all
+        render "edit"
+      end
   end
 
   private

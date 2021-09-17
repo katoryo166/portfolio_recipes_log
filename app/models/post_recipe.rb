@@ -3,6 +3,14 @@ class PostRecipe < ApplicationRecord
 
   belongs_to :user
   belongs_to :genre
+  has_many :post_comments, dependent: :destroy
+  has_many :favorites
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
+
+
   attachment :image
 
   validates :title, presence:true, length:{minimum:2,maximim:20}

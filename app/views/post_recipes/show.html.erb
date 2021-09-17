@@ -2,9 +2,67 @@
   <div class="col-md-12 col-xs-12 offset-md-1">
     <h2>投稿詳細</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
-    <div><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "100x100"%></div>
-    <div class="field">
-      <%= @post_recipe.title %>
+    <%= link_to "投稿を編集", edit_post_recipe_path %>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-5 col-md-2">
+      <p class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "200x200"%></p>
     </div>
+    <div class="col-xs-5 col-md-6">
+      タイトル: <%= @post_recipe.title %><br />
+      投稿者: <%= @post_recipe.user.name %><br />
+      <h5>材料</h5>
+      <div class="ingredient">
+
+        <p><%= @post_recipe.ingredient %></p>
+      </div>
+    </div>
+
+    <div class="col-md-10 col-xs-12 offset-md-1">
+      <section class="post_introduction">
+        <h3>作り方</h3>
+        <p><%= @post_recipe.post_introduction %></p>
+      </section>
+
+    <% if @post_recipe.favorited_by?(current_user) %>
+          <p>
+        <%= link_to post_recipe_favorites_path(@post_recipe), method: :delete do %>
+          <span class="favorite_heart">♥</span><%= @post_recipe.favorites.count %> いいね
+        <% end %>
+      </p>
+    <% else %>
+      <p>
+        <%= link_to post_recipe_favorites_path(@post_recipe), method: :post do %>
+          <span class="favorite_heart">♡</span><%= @post_recipe.favorites.count %> いいね
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10 col-xs-12 offset-md-1">
+    <section>
+        <div class="comments">
+          <p>コメント件数: <%= @post_recipe.post_comments.count %></p>
+            <% @post_recipe.post_comments.each do |post_comment| %>
+              <div class="">
+              <%= post_comment.user.name %>
+              <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
+              <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete %>
+              </div>
+            <% end %>
+        </div>
+        <div class="form_group">
+          <%= form_with(model:[@post_recipe, @post_comment], local: true) do |f| %>
+          <div class="form_group">
+            <%= f.text_area :comment, rows:'3',placeholder: "コメントをここに" %>
+          </div>
+            <%= f.submit "送信する" %>
+          <% end %>
+        </div>
+      </section>
   </div>
 </div>
