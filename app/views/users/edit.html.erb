@@ -3,22 +3,22 @@
     <h2>アカウント情報編集</h2>
     <%= form_with model:@user, url:user_path, local:true do |f| %>
     <%= render "layouts/error_messages", model: @user %>
-      <div>
-        <%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "100x100"%>
+      <div class="form_group">
+        <div class="mypage_img"><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "100x100"%></div>
         <%= f.attachment_field :account_image, placeholder: "プロフィール画像" %>
       </div>
       <table class="table table-bordered table-condensed">
         <tr>
           <th><%= f.label:"名前" %></th>
-          <td><%= f.text_field :name, autofoucus: true %></td>
+          <td><%= f.text_field :name, autofoucus: true, class: "col-sm-9"%></td>
         </tr>
         <tr>
           <th><%= f.label:"自己紹介文" %></th>
-          <td><%= f.text_area :introduction, autofoucus: true %></td>
+          <td><%= f.text_area :introduction, autofoucus: true, :size => "20x5", class: "col-sm-9" %></td>
         </tr>
       </table>
 
-      <div class="acctions col-xs-10 col-xs-offset-2">
+      <div class="form_group col-xs-10 col-xs-offset-2">
         <%= f.submit "変更する", class:"btn btn-success"%>
         <%= link_to "退会する", confirm_unsubscribe_users_path, "data-confirm" => "退会画面に進みますか?", class:"btn btn-danger" %>
       </div>

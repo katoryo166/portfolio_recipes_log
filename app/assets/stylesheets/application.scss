@@ -25,10 +25,10 @@
 }
 
 #wrapper{
-    height: 100%;
-    min-height: 100vh;
-    position: relative;
-    padding-bottom: 120px;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 120px;
 }
 
 .container{
@@ -45,11 +45,23 @@
   margin: 40px 0;
 }
 
+/*アカウント詳細ページ*/
+.mypage_img{
+  margin: 20px auto;
+   img{
+    border-radius: 50%;
+  }
+}
+.user_list{
+  text-decoration: none;
+}
+
 /*投稿*/
 .card {
   margin: 20px auto;
   max-width: 300px;
 }
+
 .favorite_heart{ color: #ff6699;}
 
 /*投稿詳細ページ*/
@@ -61,24 +73,24 @@
   }
 }
 
-.ingredient{
+.ingredient, .post_introduction{
   height: auto;
   margin: 20px auto;
   border: 1px solid #999;
+
   p{
-
-
     padding: 5px  20px ;
   }
 }
 
 .post_introduction{
 
-  p{
-    width: 100%;
-  }
 }
 
+/*投稿詳細コメント機能*/
+.comment_text{
+  margin: 20px auto;
+}
 
 /*footer*/
 footer{

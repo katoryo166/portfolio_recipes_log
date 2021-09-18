@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :edit, :update]
     resource :users,only: [:show] do
   		collection do
-    		get 'favorite_list' => 'users#favorite_list',  as:'favorite_list'
+    		get 'favorite_lists/:id' => 'users#favorite_lists',  as:'favorite_lists'
     	  get 'unsubscribe/:id' => 'users#unsubscribe',  as:'confirm_unsubscribe'
     	  patch 'withdraw/:id' => 'users#withdraw', as:'withdraw'
     	 end

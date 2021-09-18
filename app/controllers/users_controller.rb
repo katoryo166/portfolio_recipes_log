@@ -25,7 +25,10 @@ class UsersController < ApplicationController
       end
   end
 
-  def favorite_list
+  def favorite_lists
+    @user = User.find(params[:id])
+    favorite_lists = Favorite.where(user_id: @user.id)
+    @like_post = PostRecipe.find(favorite_lists)
   end
 
   def unsubscribe

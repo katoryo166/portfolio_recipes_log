@@ -1,9 +1,9 @@
 <div class="row">
-  <div class="col-md-8 col-xs-12 offset-md-1">
+  <div class="col-md-10 col-xs-12 col-lg-10 offset-md-1">
     <h2>マイページ</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
-    <div><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "100x100"%></div>
-    <table class="table">
+    <div class="mypage_img"><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "100x100"%></div>
+    <table class="table table-bordered table-condensed">
       <tr>
         <th>名前</th>
         <td><%= @user.name %></td>
@@ -12,13 +12,15 @@
         <th>自己紹介文</th>
         <td><%= @user.introduction %></td>
       </tr>
-      <tr>
-        <td><%= link_to "編集する", edit_user_path %></td>
-        <td><%= link_to favorite_list_users_path do %>いいねした投稿<% end %></td>
-      </tr>
     </table>
+    <div class="form_group">
+      <%= link_to "編集する", edit_user_path, class:"user_list" %>
+      <%= link_to favorite_lists_users_path(@user), class:"user_list" do %>
+        いいねした投稿
+      <% end %>
     </div>
   </div>
+</div>
 
 <div class="row">
   <% @post_recipes.each do |post_recipe| %>

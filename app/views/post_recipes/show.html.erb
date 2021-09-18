@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-12 col-xs-12 offset-md-1">
+  <div class="col-md-10 col-xs-12 offset-md-1">
     <h2>投稿詳細</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
     <%= link_to "投稿を編集", edit_post_recipe_path %>
@@ -21,8 +21,8 @@
     </div>
 
     <div class="col-md-10 col-xs-12 offset-md-1">
+      <h3>作り方</h3>
       <section class="post_introduction">
-        <h3>作り方</h3>
         <p><%= @post_recipe.post_introduction %></p>
       </section>
 
@@ -48,7 +48,7 @@
         <div class="comments">
           <p>コメント件数: <%= @post_recipe.post_comments.count %></p>
             <% @post_recipe.post_comments.each do |post_comment| %>
-              <div class="">
+              <div class="comment_text">
               <%= post_comment.user.name %>
               <%= post_comment.created_at.strftime('%Y/%m/%d') %><%= post_comment.comment %>
               <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete %>
@@ -58,7 +58,7 @@
         <div class="form_group">
           <%= form_with(model:[@post_recipe, @post_comment], local: true) do |f| %>
           <div class="form_group">
-            <%= f.text_area :comment, rows:'3',placeholder: "コメントをここに" %>
+            <%= f.text_area :comment ,placeholder: "コメントをここに" %>
           </div>
             <%= f.submit "送信する" %>
           <% end %>
