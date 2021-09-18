@@ -5,12 +5,12 @@
   </div>
 </div>
 
-<div class="col-md-10 col-xs-12 offset-md-2">
+<div class="col-md-10 col-xs-12 col-lg-10 offset-md-2">
   <%= form_with model:@post_recipe, url:post_recipe_path, local:true  do |f| %>
     <%= render "layouts/error_messages", model: @post_recipe %>
-      <div>
+      <div class="form_group">
         <p class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "200x200"%></p>
-        <%= f.attachment_field :image, placeholder: "画像" %>
+        <%= f.attachment_field :image, placeholder: "画像", class: "col-sm-9" %>
       </div>
       <div class="form_group">
         <%= f.label:"難易度", class: "col-sm-3" %><br />

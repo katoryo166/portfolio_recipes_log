@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-10 col-xs-12 col-lg-10 offset-md-1">
+  <div class="col-md-10 col-xs-10 col-lg-10 offset-md-1">
     <h2>マイページ</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
     <div class="mypage_img"><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "100x100"%></div>
@@ -14,8 +14,8 @@
       </tr>
     </table>
     <div class="form_group">
-      <%= link_to "編集する", edit_user_path, class:"user_list" %>
-      <%= link_to favorite_lists_users_path(@user), class:"user_list" do %>
+      <%= link_to "編集する", edit_user_path, class:"btn btn-primary" %>
+      <%= link_to favorite_lists_users_path(@user), class:"btn btn-success" do %>
         いいねした投稿
       <% end %>
     </div>
