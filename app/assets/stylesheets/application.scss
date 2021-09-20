@@ -46,14 +46,15 @@
 }
 
 /*トップページ*/
-.jumbtn{
+.jumbotron{
   background: url(main.jpg) center no-repeat;
   position: relative;
   width: 100%;
   background-position: 100%;
   background-size:  cover;
 }
-.jumbtn::before{
+
+.jumbotron::before{
   content: '';
   display: block;
   padding-top: 50%;
