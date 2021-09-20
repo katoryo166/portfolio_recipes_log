@@ -45,6 +45,20 @@
   margin: 40px 0;
 }
 
+/*トップページ*/
+.jumbtn{
+  background: url(main.jpg) center no-repeat;
+  position: relative;
+  width: 100%;
+  background-position: 100%;
+  background-size:  cover;
+}
+.jumbtn::before{
+  content: '';
+  display: block;
+  padding-top: 50%;
+}
+
 /*アカウント詳細ページ*/
 .mypage_img{
   margin: 20px auto;

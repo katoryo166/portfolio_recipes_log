@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-10 col-xs-12 offset-md-1">
-    <h2>投稿する</h2>
+    <h2>投稿フォーム</h2>
     <p id ="notice" class="text-success" ><%= flash[:notice] %></p>
       <%= form_with model:@post_recipe, url:post_recipes_path, local:true do |f| %>
       <%= render "layouts/error_messages", model: @post_recipe %>
@@ -10,10 +10,10 @@
             <%= f.attachment_field :image, class: "col-sm-9" %>
           </div>
         </div>
-        <div class=" col-xs-6">
+        <div class="form_group col-md-10">
           <div class="form_group col-md-10">
             <%= f.label:"難易度", class: "col-sm-3" %><br />
-            <%= f.collection_select(:genre_id, @genres, :id, :name, prompt: "-- 選択してください --", class: "col-sm-7") %>
+            <%= f.collection_select(:genre_id, @genres, :id, :name, prompt: "-- 選択してください --", class: "col-sm-8") %>
           </div>
           <div class="form_group col-md-10">
             <%= f.label:"タイトル", class: "col-sm-3" %>
