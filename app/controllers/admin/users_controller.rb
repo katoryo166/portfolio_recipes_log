@@ -7,10 +7,12 @@ class Admin::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @post_recipes = @user.post_recipes.all
   end
 
   def edit
     @user = User.find(params[:id])
+
   end
 
   def update

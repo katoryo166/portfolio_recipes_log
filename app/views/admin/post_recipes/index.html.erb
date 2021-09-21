@@ -14,8 +14,16 @@
           <tbody>
             <tr>
               <td><%= post_recipe.id %></td>
-              <td><%= post_recipe.user.name %></td>
-              <td><%= post_recipe.title %></td>
+              <td>
+                <%= link_to admin_user_path(post_recipe.id) do %>
+                  <%= post_recipe.user.name %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to admin_post_recipe_path(post_recipe.id) do %>
+                  <%= post_recipe.title %>
+                <% end %>
+              </td>
               <td><%= post_recipe.genre.name %></td>
             </tr>
           </tbody>

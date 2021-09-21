@@ -1,2 +1,37 @@
-<h1>Admin::PostRecipes#edit</h1>
-<p>Find me in app/views/admin/post_recipes/edit.html.erb</p>
+<div class="row">
+  <div class="col-md-8 col-xs-12 offset-md-1">
+    <h2>投稿情報編集</h2>
+    <p id="notice" class="text-success"><%= flash[:notice] %></p>
+  </div>
+</div>
+
+<div class="col-md-10 col-xs-12 col-lg-10 offset-md-2">
+  <%= form_with model:@post_recipe, url:admin_post_recipe_path, local:true  do |f| %>
+    <%= render "layouts/error_messages", model: @post_recipe %>
+      <div class="form_group col-xs-5 offset-md-1">
+        <div class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "200x200"%></div>
+        <%= f.attachment_field :image, placeholder: "画像", class: "col-sm-9" %>
+      </div>
+      <div class="form_group">
+        <%= f.label:"難易度", class: "col-sm-3" %><br />
+        <%= f.collection_select(:genre_id, @genres, :id, :name, include_blank: "--選択してください--", class:"col-sm-9" )  %>
+      </div>
+      <div class="form_group">
+        <%= f.label:"タイトル", class: "col-sm-3" %>
+        <%= f.text_field :title, autofoucus: true, class: "col-sm-9" %>
+      </div>
+
+      <div class="form_group" id="exampleFormControlTextarea1">
+        <%= f.label:"材料", class: "col-sm-3" %>
+        <%= f.text_area :ingredient, :size => "10x5", autofoucus: true, class: "col-sm-9" %>
+      </div>
+      <div class="form_group" id="exampleFormControlTextarea1">
+        <%= f.label:"作り方", class: "col-sm-3" %>
+          <%= f.text_area :post_introduction, :size => "10x5", autofoucus: true, class: "col-sm-9"%>
+      </div>
+
+      <div class="acctions col-xs-10 col-xs-offset-2">
+        <%= f.submit "変更する", class:"btn btn-success"%>
+      </div>
+  <% end %>
+</div>
