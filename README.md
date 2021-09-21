@@ -30,3 +30,4 @@ ruby/Ruby on Rails/html/scss/javascript/MySQL/Github/AWS
 
 ## 使用素材
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- - ぱくたそ<https://www.pakutaso.com/photo/20282.html>

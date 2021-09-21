@@ -4,24 +4,6 @@
   </div>
 </div>
 <div class="row">
-  <% @post_recipes.each do |post_recipe| %>
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="card md-3">
-        <div class="card-body">
-          <%= link_to user_path(post_recipe.user) do %>
-            <%= post_recipe.user.name %></td>
-          <% end %>
-          <%= link_to post_recipe_path(post_recipe.id) do %>
-            <%= attachment_image_tag post_recipe, :image ,format: 'jpeg',class: "bd-placeholder-img card-img-top", size: "200x200" %>
-            <%= post_recipe.title %>
-          <% end %>
-          <p><%= post_recipe.genre.name %><br />
-            <span class="favorite_heart">♥</span><%= post_recipe.favorites.count %>
-            コメント<%= post_recipe.post_comments.count %>
-          </p>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render 'post_recipes/post_recipes', post_recipes: @post_recipes %>
 </div>
 

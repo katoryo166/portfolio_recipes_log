@@ -1,7 +1,7 @@
 <div class="row">
   <div class="jumbotron">
     <h4 class="text-dark">簡単なレシピを発信・共有するサイトです。</h4>
-    <h6 class="text-dark"><%= link_to "こちら", new_user_registration_path, class:"btn btn-primary btn-sm" %>から登録</h6>
+    <h6 class="text-dark"><%= link_to "こちらから登録", new_user_registration_path, class:"btn btn-primary btn-sm" %></h6>
   </div>
 </div>
 
@@ -9,7 +9,7 @@
     <h2>投稿一覧</h2>
   </div>
 <div class="row">
-  <% @post_recipes.each do |post_recipe| %>
+  <% @post_recipes.last(3).each do |post_recipe| %>
     <div class="col-12 col-md-6 col-lg-4">
       <div class="card md-3">
         <div class="card-body">
