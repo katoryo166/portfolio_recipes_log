@@ -2,9 +2,12 @@
   <div class="col-12 col-md-10 col-xs-10 offset-md-1">
     <h2>投稿詳細</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
-    <div class="form_group">
-    <%= link_to "投稿を編集", edit_post_recipe_path, class:"btn btn-success btn-sm" %>
-    </div>
+    <% if @post_recipe.user == current_user %>
+      <div class="form_group">
+        <%= link_to "投稿を編集", edit_post_recipe_path, class:"btn btn-success btn-sm" %>
+        <%= link_to "削除", post_recipe_path(@post_recipe), method: :delete, "data-confirm" => "本当に削除しますか？ " , class:"btn btn-danger btn-sm" %>
+      </div>
+    <% end %>
   </div>
 </div>
 
@@ -62,7 +65,9 @@
                   <%= post_comment.user.name %>
                   <%= post_comment.created_at.strftime('%Y/%m/%d') %><br />
                   <%= post_comment.comment %>
-                  <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete %>
+                  <% if post_comment.user == current_user %>
+                    <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete %>
+                  <% end %>
                 </p>
               </div>
             <% end %>
