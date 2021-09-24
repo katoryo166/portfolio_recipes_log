@@ -12,7 +12,7 @@
 </div>
 
 <div class="row">
-    <div class="col-7 col-sm-10 col-md-2 col-xs-5 offset-md-1">
+    <div class="col-8 col-sm-5 col-md-2 col-xs-5 offset-md-1">
       <p class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "200x200"%></p>
     </div>
     <div class="col-12 col-xs-5 col-md-6">
@@ -20,7 +20,6 @@
       投稿者: <%= link_to user_path(@post_recipe.user) do %><%= @post_recipe.user.name %><% end %><br />
       <h5>材料</h5>
       <div class="ingredient">
-
         <p><%= @post_recipe.ingredient %></p>
       </div>
     </div>
@@ -28,7 +27,7 @@
     <div class="col-12 col-md-10 col-xs-12 offset-md-1">
       <h3>作り方</h3>
       <section class="post_introduction">
-        <p><%= @post_recipe.post_introduction %></p>
+        <p><span>ポイント<i class="far fa-lightbulb"></i></span><br /><%= @post_recipe.post_introduction %></p>
       </section>
       <% if user_signed_in? %>
         <% if @post_recipe.favorited_by?(current_user) %>

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resource :favorites, only:[:create, :destroy]
     resources :post_comments, only:[:create, :destroy]
   end
+  get 'search' => 'post_recipes#search'
 
   resources :users, only:[:show, :edit, :update]
     resource :users,only: [:show] do

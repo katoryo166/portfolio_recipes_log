@@ -63,6 +63,7 @@
 /*アカウント詳細ページ*/
 .mypage_img{
   margin: 20px auto;
+
    img{
     border-radius: 50%;
   }
@@ -84,17 +85,17 @@
   margin: 20px auto;
 
   .recipe_img{
-  margin: 0 auto;
+  margin: 0 40px 0 auto;
   }
 }
 
 .ingredient, .post_introduction{
   height: auto;
   margin: 20px auto;
-  border: 1px solid #999;
-
+  border: 1px solid #eee;
+  background-color: #d7efff;
   p{
-    padding: 5px  20px ;
+    padding: 10px  20px;
   }
 }
 

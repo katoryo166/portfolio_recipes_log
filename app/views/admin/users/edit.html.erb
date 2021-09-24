@@ -18,6 +18,10 @@
           <th><%= f.label:"自己紹介文" %></th>
           <td><%= f.text_area :introduction, autofoucus: true, :size => "20x5", class: "col-sm-9" %></td>
         </tr>
+        <tr>
+            <th><%= f.label :"メールアドレス" %></th>
+            <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %></td>
+          </tr>
       </table>
       <div class="field">
         <%= f.label:"アカウントステータス" %>

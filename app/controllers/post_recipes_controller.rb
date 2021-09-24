@@ -57,6 +57,12 @@ class PostRecipesController < ApplicationController
     redirect_to post_recipes_path
   end
 
+  def search
+    @post_recipes = PostRecipe.search(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   private
 
   def post_recipe_params

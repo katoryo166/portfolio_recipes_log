@@ -10,6 +10,10 @@ class PostRecipe < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+  def self.search(keyword)
+    where(["title like? OR post_introduction like?", "%#{keyword}%", "%#{keyword}%"])
+  end
+
 
   attachment :image
 
