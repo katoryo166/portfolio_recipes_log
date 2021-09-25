@@ -16,7 +16,7 @@ class PostRecipesController < ApplicationController
   end
 
   def index
-    @post_recipes = PostRecipe.all
+    @post_recipes = PostRecipe.page(params[:page]).reverse_order
   end
 
   def show
@@ -58,9 +58,10 @@ class PostRecipesController < ApplicationController
   end
 
   def search
-    @post_recipes = PostRecipe.search(params[:keyword])
+    @post_recipes = PostRecipe.search(params[:keyword]).page(params[:page])
     @keyword = params[:keyword]
     render "index"
+
   end
 
   private
