@@ -12,23 +12,31 @@
 </div>
 
 <div class="row">
-    <div class="col-8 col-sm-5 col-md-2 col-xs-5 offset-md-1">
+    <div class="col-7 col-sm-5 col-md-2 col-xs-5 offset-md-1">
       <p class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "200x200"%></p>
     </div>
     <div class="col-12 col-xs-5 col-md-6">
-      タイトル: <%= @post_recipe.title %><br />
-      投稿者: <%= link_to user_path(@post_recipe.user) do %><%= @post_recipe.user.name %><% end %><br />
-      <h5>材料</h5>
-      <div class="ingredient">
-        <p><%= @post_recipe.ingredient %></p>
-      </div>
+      <h4>タイトル: <%= @post_recipe.title %></h4>
+      <h4>投稿者: <%= link_to user_path(@post_recipe.user) do %><%= @post_recipe.user.name %><% end %></h4>
     </div>
 
-    <div class="col-12 col-md-10 col-xs-12 offset-md-1">
+    <div class="col-12 col-md-10 col-xs-10 offset-md-1">
+      <div class="ingredient row mx-md-n5">
+        <div class="col py-3 px-md-5">
+        <h5>材料</h5>
+        <p><%= @post_recipe.ingredient %></p>
+        </div>
+      </div>
+
       <h3>作り方</h3>
-      <section class="post_introduction">
-        <p><span>ポイント<i class="far fa-lightbulb"></i></span><br /><%= @post_recipe.post_introduction %></p>
+      <section class="post_introduction row mx-md-n5">
+        <div class="col py-3 px-md-5">
+          <span>ポイント <i class="far fa-lightbulb"></i></span>
+          <p><%= @post_recipe.post_introduction %></p>
+        </div>
       </section>
+
+      <strong>
       <% if user_signed_in? %>
         <% if @post_recipe.favorited_by?(current_user) %>
           <p>
@@ -50,6 +58,7 @@
             <% end %>
           </p>
       <% end %>
+      </strong>
   </div>
 </div>
 
@@ -59,8 +68,8 @@
         <div class="comments">
           <p>コメント件数: <%= @post_recipe.post_comments.count %></p>
             <% @post_recipe.post_comments.each do |post_comment| %>
-              <div class="comment_text">
-                <p>
+              <div class="comment_text bg-light row mx-md-n5">
+                <p class="col py-3 px-md-5">
                   <%= post_comment.user.name %>
                   <%= post_comment.created_at.strftime('%Y/%m/%d') %><br />
                   <%= post_comment.comment %>

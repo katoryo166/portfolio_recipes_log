@@ -21,7 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
 }
 
 #wrapper{
@@ -68,8 +68,8 @@
     border-radius: 50%;
   }
 }
-.user_list{
-  text-decoration: none;
+th, td{
+  width: 40%;
 }
 
 /*投稿*/
@@ -90,13 +90,13 @@
 }
 
 .ingredient, .post_introduction{
-  height: auto;
-  margin: 20px auto;
-  border: 1px solid #eee;
+   margin: 20px auto;
   background-color: #d7efff;
+
   p{
     padding: 10px  20px;
   }
+
 }
 
 

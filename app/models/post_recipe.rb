@@ -11,7 +11,11 @@ class PostRecipe < ApplicationRecord
   end
 
   def self.search(keyword)
-    where(["title like? OR post_introduction like?", "%#{keyword}%", "%#{keyword}%"])
+    if keyword
+      where(["title like? OR post_introduction like?", "%#{keyword}%", "%#{keyword}%"])
+    else
+      @post_recipes = PostRecipe.page(params[:page]).reverse_order
+    end
   end
 
 

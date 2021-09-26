@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-12  col-sm-12  col-md-10 col-lg-10 offset-md-1">
-    <h2>マイページ</h2>
+    <h2><%= @user.name %>さん</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
     <div class="mypage_img"><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "100x100"%></div>
     <table class="table table-bordered table-condensed">
@@ -8,19 +8,26 @@
         <th>名前</th>
         <td><%= @user.name %></td>
       </tr>
+
       <tr>
         <th>自己紹介文</th>
         <td><%= @user.introduction %></td>
       </tr>
-    </table>
-    <div class="form_group">
-      <%= link_to "編集する", edit_user_path, class:"btn btn-primary" %>
-      <%= link_to favorite_lists_users_path(@user), class:"btn btn-success" do %>
-        いいねした投稿
+      <% if user_signed_in? %>
+      <tr>
+        <th><%= link_to "編集する", edit_user_path, class:"btn btn-primary btn-sm" %></th>
+        <td><%= link_to favorite_lists_users_path(@user), class:"btn btn-success btn-sm" do %>
+          いいねした投稿
+        <% end %>
+        </td>
+      </tr>
       <% end %>
-    </div>
+    </table>
+
+      </div>
+
   </div>
-</div>
+
 
 <div class="row">
  <%= render 'post_recipes/post_recipes', post_recipes: @post_recipes %>

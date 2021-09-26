@@ -1,7 +1,6 @@
 class PostRecipesController < ApplicationController
    before_action :authenticate_user!, only: [:new,:create]
 
-
   def create
     @post_recipe = PostRecipe.new(post_recipe_params)
     @post_recipe.user = current_user
@@ -58,10 +57,9 @@ class PostRecipesController < ApplicationController
   end
 
   def search
-    @post_recipes = PostRecipe.search(params[:keyword]).page(params[:page])
+    @post_recipes = PostRecipe.search(params[:keyword]).page(params[:page]).reverse_order
     @keyword = params[:keyword]
     render "index"
-
   end
 
   private
