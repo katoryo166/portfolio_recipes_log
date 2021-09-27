@@ -16,8 +16,8 @@
       <p class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "200x200"%></p>
     </div>
     <div class="col-12 col-xs-5 col-md-6">
-      <h4>タイトル: <%= @post_recipe.title %></h4>
-      <h4>投稿者: <%= link_to user_path(@post_recipe.user) do %><%= @post_recipe.user.name %><% end %></h4>
+      <h5>タイトル: <%= @post_recipe.title %></h5>
+      <h5>投稿者: <%= link_to user_path(@post_recipe.user), class:"badge " do %><%= @post_recipe.user.name %><% end %></h5s>
     </div>
 
     <div class="col-12 col-md-10 col-xs-10 offset-md-1">
