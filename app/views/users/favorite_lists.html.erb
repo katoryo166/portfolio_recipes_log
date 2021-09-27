@@ -2,13 +2,12 @@
     <h4>いいねした投稿</h4>
 </div>
 <div class="row">
-  <div class="col-12  col-sm-12  col-md-10 col-lg-10 offset-md-1">
+  <div class="col-12  col-sm-12 col-md-10 col-lg-10 col-xs-5 offset-md-1">
     <table class="table table-bordered table-condensed">
       <therd>
         <tr>
           <th>タイトル</th>
-          <th>ジャンル</th>
-          <th></th>
+          <th>投稿者</th>
         </tr>
       </therd>
       <% current_user.favorites.each do |favorite| %>
@@ -19,10 +18,10 @@
               <%= favorite.post_recipe.title %>
             <% end %>
           </td>
-          <td><%= favorite.post_recipe.genre.name %></td>
           <td>
-            <span class="favorite_heart">♥</span><%= favorite.post_recipe.favorites.count %>
-              コメント<%= favorite.post_recipe.post_comments.count %>
+            <%= link_to user_path(favorite.post_recipe.user.id) do %>
+              <%= favorite.post_recipe.user.name %>
+            <% end %>
           </td>
         </tr>
       </tbody>
