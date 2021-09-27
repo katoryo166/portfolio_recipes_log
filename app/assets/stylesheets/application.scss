@@ -68,10 +68,13 @@
     border-radius: 50%;
   }
 }
-th, td{
-  width: 40%;
-}
+.account{
 
+  th, td{
+    width: 40%;
+  }
+
+}
 /*投稿*/
 .card {
   margin: 20px auto;
@@ -85,7 +88,7 @@ th, td{
   margin: 20px auto;
 
   .recipe_img{
-  margin: 0 40px 0 auto;
+  margin: 0  auto;
   }
 }
 
