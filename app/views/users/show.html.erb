@@ -1,33 +1,34 @@
-<div class="row">
+<div class="row border rounded">
   <div class="col-12">
     <h2><%= @user.name %>さん</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
-    <div class="mypage_img"><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "100x100"%></div>
+  </div>
+  <div class="col-8 col-sm-6 col-md-4 col-lg-2 col-xs-5 ">
+    <div class="mypage_img"><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "200x200"%></div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xs-5 ">
     <table class="table table-bordered table-condensed account">
       <tr>
         <th>名前</th>
         <td><%= @user.name %></td>
       </tr>
-
       <tr>
         <th>自己紹介文</th>
         <td><%= @user.introduction %></td>
       </tr>
-      <% if user_signed_in? %>
-      <tr>
-        <th><%= link_to "編集する", edit_user_path, class:"btn btn-primary btn-sm" %></th>
-        <td><%= link_to favorite_lists_users_path(@user), class:"btn btn-success btn-sm" do %>
-          いいねした投稿
-        <% end %>
-        </td>
-      </tr>
-      <% end %>
     </table>
 
-      </div>
+    <div class="col-xs-5">
+      <% if user_signed_in? %>
+        <%= link_to "編集する", edit_user_path, class:"btn btn-primary" %>
+        <%= link_to favorite_lists_users_path(@user), class:"btn btn-success" do %>
+          いいねした投稿
+        <% end %>
+      <% end %>
+    </div>
 
   </div>
-
+</div>
 
 <div class="row">
  <%= render 'post_recipes/post_recipes', post_recipes: @post_recipes %>

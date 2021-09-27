@@ -1,4 +1,5 @@
 <div class="row">
+  <p id="notice" class="text-success"><%= flash[:notice] %></p>
   <div class="jumbotron">
     <h4 class="text-dark">簡単なレシピを発信・共有するサイトです。</h4>
     <h6 class="text-dark"><%= link_to "こちらから登録", new_user_registration_path, class:"btn btn-primary btn-sm" %></h6>
