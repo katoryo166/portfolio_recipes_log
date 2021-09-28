@@ -4,9 +4,13 @@
     <p id ="notice" class="text-success" ><%= flash[:notice] %></p>
     <div class="form_group col-12 col-md-10">
       <%= form_with model:@genre, url:admin_genres_path, local:true do |f| %>
-        <%= f.label:"ジャンル名", class:"col-sm-3" %>
-        <%= f.text_field :name, class:"col-sm-4" %>
-        <%= f.submit "追加する", class:"col-sm-3" %>
+        <%= f.label:"ジャンル名", class:"col-sm-9" %>
+        <div class="input-group">
+          <%= f.text_field :name %>
+          <span class="input-group-btn input-group-append">
+            <%= f.submit "追加する" %>
+          </span>
+        </div>
       <% end %>
     </div>
 

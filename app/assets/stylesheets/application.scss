@@ -44,6 +44,13 @@
 .form_group{
   margin: 40px 0;
 }
+/*全体のbackground*/
+.slide1 {
+  background-color: #fff;
+  background-image: linear-gradient(90deg, transparent 100px, #abced4 79px, #abced4 81px, transparent 81px),
+  linear-gradient(#eee .1em, transparent .1em);
+  background-size: 100% 1.2em;
+}
 
 /*トップページ*/
 .jumbotron{
@@ -69,7 +76,7 @@
   }
 }
 .account{
-  margin-top: 2.0rem;
+  margin-top: 2.5rem;
 }
 /*投稿*/
 .card {

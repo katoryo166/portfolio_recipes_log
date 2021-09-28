@@ -12,10 +12,10 @@
 </div>
 
 <div class="row">
-    <div class="col-10 col-sm-8 col-md-5 col-lg-4 col-xs-5">
+    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xs-5">
       <div class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "300x250"%></div>
     </div>
-    <div class="col-12 col-sm-12 col-md-7 col-lg-6 col-xs-5">
+    <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xs-5">
       <h5>タイトル: <%= @post_recipe.title %></h5>
       <h5>投稿者: <%= link_to user_path(@post_recipe.user), class:"badge " do %><%= @post_recipe.user.name %><% end %></h5s>
     </div>
@@ -70,7 +70,7 @@
             <% @post_recipe.post_comments.each do |post_comment| %>
               <div class="comment_text bg-light row mx-md-n5">
                 <p class="col py-3 px-md-5">
-                  <%= post_comment.user.name %>
+                  <%= link_to user_path(post_comment.user.id) do %><%= post_comment.user.name %><% end %>
                   <%= post_comment.created_at.strftime('%Y/%m/%d') %><br />
                   <%= post_comment.comment %>
                   <% if post_comment.user == current_user %>

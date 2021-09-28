@@ -9,23 +9,28 @@
 </div>
 
 <div class="row">
-    <div class="col-7 col-sm-10 col-md-2 col-xs-5 offset-md-1">
-      <p class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "200x200"%></p>
+    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xs-5">
+      <div class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "300x250"%></div>
     </div>
-    <div class="col-12 col-xs-5 col-md-6">
-      タイトル: <%= @post_recipe.title %><br />
-      投稿者: <%= link_to user_path(@post_recipe.user) do %><%= @post_recipe.user.name %><% end %><br />
-      <h5>材料</h5>
-      <div class="ingredient">
-
-        <p><%= @post_recipe.ingredient %></p>
-      </div>
+    <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xs-5">
+      <h5>タイトル: <%= @post_recipe.title %></h5>
+      <h5>投稿者: <%= link_to user_path(@post_recipe.user), class:"badge " do %><%= @post_recipe.user.name %><% end %></h5s>
     </div>
 
     <div class="col-12 col-md-10 col-xs-12 offset-md-1">
+      <div class="ingredient row mx-md-n5">
+        <div class="col py-3 px-md-5">
+        <h5>材料</h5>
+        <p><%= @post_recipe.ingredient %></p>
+        </div>
+      </div>
+
       <h3>作り方</h3>
-      <section class="post_introduction">
-        <p><%= @post_recipe.post_introduction %></p>
+      <section class="post_introduction row mx-md-n5">
+        <div class="col py-3 px-md-5">
+          <span>ポイント <i class="far fa-lightbulb"></i></span>
+          <p><%= @post_recipe.post_introduction %></p>
+        </div>
       </section>
       <% if user_signed_in? %>
         <% if @post_recipe.favorited_by?(current_user) %>
@@ -57,12 +62,14 @@
         <div class="comments">
           <p>コメント件数: <%= @post_recipe.post_comments.count %></p>
             <% @post_recipe.post_comments.each do |post_comment| %>
-              <div class="comment_text">
-                <p>
-                  <%= post_comment.user.name %>
+              <div class="comment_text bg-light row mx-md-n5">
+                <p class="col py-3 px-md-5">
+                  <%= link_to user_path(post_comment.user.id) do %><%= post_comment.user.name %><% end %>
                   <%= post_comment.created_at.strftime('%Y/%m/%d') %><br />
                   <%= post_comment.comment %>
-                  <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete %>
+                  <% if post_comment.user == current_user %>
+                    <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete %>
+                  <% end %>
                 </p>
               </div>
             <% end %>

@@ -16,7 +16,7 @@
             <tr>
               <td><%= post_recipe.id %></td>
               <td>
-                <%= link_to admin_user_path(post_recipe.id) do %>
+                <%= link_to admin_user_path(post_recipe.user.id) do %>
                   <%= post_recipe.user.name %>
                 <% end %>
               </td>
