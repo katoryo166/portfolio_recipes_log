@@ -7,24 +7,24 @@
 
       <div class="field">
         <%= f.label :"名前" %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control col-sm-9" %>
       </div>
 
       <div class="field">
         <%= f.label :"メールアドレス" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control col-sm-9" %>
       </div>
 
       <div class="field">
         <%= f.label :"パスワード" %>
         <% if @minimum_password_length %>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password" %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control col-sm-9" %>
       </div>
 
       <div class="field">
         <%= f.label :"パスワード確認" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control col-sm-9" %>
       </div>
 
       <div class="form_group">

@@ -26,6 +26,12 @@ class Admin::PostRecipesController < ApplicationController
       end
   end
 
+  def destroy
+    @post_recipe = PostRecipe.find(params[:id])
+    @post_recipe.destroy
+    redirect_to post_recipes_path
+  end
+
   def post_recipe_params
     params.require(:post_recipe).permit(:title, :image, :genre_id, :ingredient, :post_introduction)
   end

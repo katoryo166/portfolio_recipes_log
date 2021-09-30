@@ -12,19 +12,20 @@
 </div>
 
 <div class="row">
-    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xs-5">
+  <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xs-5">
       <div class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "300x250"%></div>
-    </div>
-    <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xs-5">
-      <h5>タイトル: <%= @post_recipe.title %></h5>
-      <h5>投稿者: <%= link_to user_path(@post_recipe.user), class:"badge " do %><%= @post_recipe.user.name %><% end %></h5s>
-    </div>
+  </div>
+
+  <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xs-5">
+    <h5>タイトル: <%= @post_recipe.title %></h5>
+    <div>投稿者: <%= link_to user_path(@post_recipe.user) do %><%= @post_recipe.user.name %><% end %></div>
+  </div>
 
     <div class="col-12 col-md-10 col-xs-10 offset-md-1">
       <div class="ingredient row mx-md-n5">
         <div class="col py-3 px-md-5">
-        <h5>材料</h5>
-        <p><%= @post_recipe.ingredient %></p>
+          <h5>材料</h5>
+          <p><%= @post_recipe.ingredient %></p>
         </div>
       </div>
 
@@ -69,21 +70,24 @@
           <p>コメント件数: <%= @post_recipe.post_comments.count %></p>
             <% @post_recipe.post_comments.each do |post_comment| %>
               <div class="comment_text bg-light row mx-md-n5">
-                <p class="col py-3 px-md-5">
+                <div class="col py-3 px-md-5 ">
                   <%= link_to user_path(post_comment.user.id) do %><%= post_comment.user.name %><% end %>
                   <%= post_comment.created_at.strftime('%Y/%m/%d') %><br />
                   <%= post_comment.comment %>
-                  <% if post_comment.user == current_user %>
-                    <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete %>
-                  <% end %>
-                </p>
+                  <div class=" text-right">
+                    <% if post_comment.user == current_user %>
+                      <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
+
             <% end %>
         </div>
         <div class="form_group">
           <%= form_with(model:[@post_recipe, @post_comment], local: true) do |f| %>
           <div class="form_group">
-            <%= f.text_area :comment ,placeholder: "コメントをここに", class: "col-sm-9" %>
+            <%= f.text_area :comment ,placeholder: "コメントをここに", class: "form-control col-sm-9" %>
           </div>
             <%= f.submit "送信する", class:"btn btn-success" %>
           <% end %>
