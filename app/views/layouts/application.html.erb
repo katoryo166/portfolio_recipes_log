@@ -13,7 +13,7 @@
   <body class="d-flex flex-column  slide1">
     <div  id="wrapper">
       <header class="shadow-sm">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info">
           <div class="container">
             <a class="navbar-brand p-3" href="/"><%= link_to "recipe_log" , root_path, class: 'nav-link text-light' %></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,10 +25,16 @@
           </div>
         </nav>
       </header>
-      <div class="container">
-        <%= yield %>
-      </div>
-      <footer>
+      <% if controller.action_name == "top" %>
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
+      <% else %>
+        <div class="container">
+          <%= yield %>
+        </div>
+      <% end %>
+      <footer class="bg-info">
         <p>CopyRight</p>
       </footer>
     </div>

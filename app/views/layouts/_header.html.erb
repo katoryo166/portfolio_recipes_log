@@ -20,7 +20,7 @@
         ログアウト
       <% end %>
     </li>
-                    <% elsif admin_signed_in? %>
+  <% elsif admin_signed_in? %>
     <li class="nav-item">
       <%= link_to admin_post_recipes_path, class: 'nav-link text-light' do %>
         投稿一覧
@@ -42,8 +42,8 @@
         ログアウト
       <% end %>
     </li>
-                    <% else %>
-                    <li class="nav-item">
+  <% else %>
+    <li class="nav-item">
       <%= link_to root_path, class: 'nav-link text-light' do %>
         Home
       <% end %>
