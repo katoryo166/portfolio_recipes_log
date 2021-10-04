@@ -21,7 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 1.0rem;
+  font-size: 1.1rem;
 }
 
 header nav  a{
@@ -84,7 +84,11 @@ header nav  a{
 /*aboutページ*/
 .example{
   position: relative;
-  background-color:rgba(255,255,255,0.7);
+
+}
+.icon{
+
+  max-height: 600px;
 }
 .example p{
   position: absolute;
@@ -100,12 +104,13 @@ header nav  a{
 
 .example img {
   width: 100%;
+  background-position: 100%;
   opacity: 0.5;
   }
 
 /*アカウント詳細ページ*/
 .mypage_img{
-  margin: 20px auto;
+  margin: 40px auto 0;
 
    img{
     border-radius: 50%;
@@ -131,7 +136,7 @@ header nav  a{
   }
 }
 
-.ingredient, .post_introduction{
+.ingredient, .post_introduction, .about_text{
   margin: 20px auto;
   background-color: #d7efff;
 
