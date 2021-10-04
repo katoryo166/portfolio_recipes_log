@@ -56,6 +56,12 @@ header nav  a{
   background-size: 100% 1.2em;
 }
 
+/*エラーメッセージ*/
+#error_explanation li{
+  text-decoration: none;
+  list-style: none;
+}
+
 /*トップページ*/
 .jumbotron{
   background: url(main.jpg) center no-repeat;
