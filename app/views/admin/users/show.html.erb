@@ -6,7 +6,7 @@
     <div class="col-8 col-sm-6 col-md-4 col-lg-2 col-xs-5 ">
     <div class="mypage_img"><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "200x200"%></div>
   </div>
-  <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xs-5 ">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xs-5 ">
     <table class="table table-bordered table-condensed account">
       <tr>
         <th>名前</th>
@@ -15,6 +15,10 @@
       <tr>
         <th>自己紹介文</th>
         <td><%= @user.introduction %></td>
+      </tr>
+      <tr>
+        <th>アカウント作成日</th>
+        <td><%= @user.created_at.strftime('%Y/%m/%d') %></td>
       </tr>
     </table>
 

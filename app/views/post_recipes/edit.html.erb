@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col-12 col-sm-12 col-md-10 col-xs-12 col-lg-10 offset-lg-2">
+<div class="row border rounded bg-light">
+  <div class="col-12 col-sm-12 col-md-10 col-xs-5 col-lg-10 offset-lg-1">
     <h2>投稿情報編集</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
     <%= form_with model:@post_recipe, url:post_recipe_path, local:true  do |f| %>

@@ -6,7 +6,7 @@ class PostRecipesController < ApplicationController
     @post_recipe.user = current_user
     if @post_recipe.save
       flash[:notice] = "投稿しました。"
-      redirect_to post_recipes_path
+      redirect_to post_recipe_path(@post_recipe)
     else
       @user = current_user
       @genres = Genre.all
