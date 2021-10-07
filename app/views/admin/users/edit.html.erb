@@ -24,6 +24,15 @@
           <th><%= f.label :"メールアドレス" %></th>
           <td><%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %></td>
           </tr>
+          <tr>
+          <th><%= f.label :"会員ステータス" %></th>
+          <td>
+            <%= f.radio_button :is_active ,:true %>
+            <%= f.label :"有効" %>
+            <%= f.radio_button :is_active ,:false %>
+            <%= f.label :"退会" %>
+          </td>
+        </tr>
       </table>
 
       <div class="form_group col-xs-10 col-xs-offset-2">
