@@ -28,6 +28,15 @@ header nav  a{
   font-size: 1.2rem;
 }
 
+/*logo*/
+.logo_area {
+  width: 200px;
+}
+.logo {
+  height: 100%;
+  width: 50%;
+}
+
 #wrapper{
   height: 100%;
   min-height: 100vh;
@@ -38,6 +47,10 @@ header nav  a{
 .container{
   margin: 20px auto;
   width: 100%;
+}
+
+.col-xs-10{
+  margin: 40px auto;
 }
 
 /*renderでフォームの崩れを防止*/
@@ -76,7 +89,7 @@ h2:before {
   width: 20%;
   height: 6px;
   content: '';
-  background: #00cc5b;
+  background: #1dc1d6;
 }
 
 /*トップページ*/
@@ -96,6 +109,7 @@ h2:before {
 
 @media screen and (min-width: 768px) {
   .jumbotron ,h3,h4{
+    font-size: 2.0rem;
     margin-bottom: 2.0rem;
   }
   .container .jumbotron, .container-fluid .jumbotron {
@@ -107,10 +121,12 @@ h2:before {
 /*aboutページ*/
 .example{
   position: relative;
+  max-width: 2000px;
+  margin: sauto;
 
 }
 .icon{
-  max-height: 600px;
+  max-height: 880px;
 }
 .example p{
   position: absolute;
@@ -158,14 +174,23 @@ h2:before {
   }
 }
 
+strong{
+  p{
+    max-width: 300px;
+    background: linear-gradient(transparent 70%, #ff99ab 70%);
+  }
+}
+
+
 .ingredient, .post_introduction, .about_text{
   margin: 20px auto;
   background-color: #d7efff;
+  border-top: 6px solid #1dc1d6;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
 
   p{
-    padding: 10px  20px;
+    padding: 10px;
   }
-
 }
 
 /*投稿詳細コメント機能*/
