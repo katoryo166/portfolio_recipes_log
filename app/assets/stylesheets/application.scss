@@ -27,14 +27,13 @@
 header nav  a{
   font-size: 1.2rem;
 }
-
 /*logo*/
 .logo_area {
   width: 200px;
 }
 .logo {
   height: 100%;
-  width: 50%;
+  width: 30%;
 }
 
 #wrapper{
@@ -47,6 +46,9 @@ header nav  a{
 .container{
   margin: 20px auto;
   width: 100%;
+}
+.col-xs-5{
+  margin: 20px auto;
 }
 
 .col-xs-10{
@@ -166,27 +168,20 @@ h2:before {
 .favorite_heart{ color: #ff6699;}
 
 /*投稿詳細ページ*/
-.col-xs-5{
-  margin: 20px auto;
-
-  .recipe_img{
-  margin: 0  auto;
-  }
-}
-
 strong{
   p{
-    max-width: 300px;
+    max-width: 100px;
     background: linear-gradient(transparent 70%, #ff99ab 70%);
   }
 }
 
-
-.ingredient, .post_introduction, .about_text{
+/*テキスト枠組み*/
+.about_text, .ingredient, .post_introduction {
   margin: 20px auto;
   background-color: #d7efff;
   border-top: 6px solid #1dc1d6;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+  line-height: 2.0;
 
   p{
     padding: 10px;
