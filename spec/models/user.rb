@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe 'Userモデルのテスト', type: :model do
   describe 'バリデーションのテスト' do
     subject { user.valid? }
 

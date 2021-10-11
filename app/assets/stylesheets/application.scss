@@ -47,6 +47,14 @@ header nav  a{
   margin: 20px auto;
   width: 100%;
 }
+
+a{
+  color: #333;
+}
+
+a:link{
+  text-decoration: none;
+}
 .col-xs-5{
   margin: 20px auto;
 }
@@ -101,6 +109,7 @@ h2:before {
   width: 100%;
   background-position: 100%;
   background-size:  cover;
+  text-shadow:  3px  3px 3px #aaa;
 }
 
 .jumbotron::before{
@@ -110,9 +119,13 @@ h2:before {
 }
 
 @media screen and (min-width: 768px) {
-  .jumbotron ,h3,h4{
+  .jumbotron h3{
     font-size: 2.0rem;
     margin-bottom: 2.0rem;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
   }
   .container .jumbotron, .container-fluid .jumbotron {
     padding-left: 100px;
@@ -135,7 +148,7 @@ h2:before {
   color: #fff;
   top: 50%;
   left: 50%;
-   transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
   font-family :Quicksand, sans-serif;/*Google Font*/
   font-size: 2.0rem;
   margin: 0;
@@ -151,6 +164,7 @@ h2:before {
 /*アカウント詳細ページ*/
 .mypage_img{
   margin: 40px auto 0;
+  object-fit: cover;
 
    img{
     border-radius: 50%;
@@ -173,6 +187,12 @@ strong{
     max-width: 100px;
     background: linear-gradient(transparent 70%, #ff99ab 70%);
   }
+}
+.recipe_img{
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /*テキスト枠組み*/
@@ -199,9 +219,9 @@ footer{
    height: 40px;
    margin-top: auto;
    margin-bottom: -40px;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
+   color: #fff;
+   text-align: center;
+   padding: 10px 0;
+   position: absolute;
+   bottom: 0;
 }
