@@ -136,12 +136,12 @@ h2:before {
 /*aboutページ*/
 .example{
   position: relative;
-  max-width: 2000px;
-  margin: sauto;
+  max-width: 1500px;
+  margin: auto;
 
 }
 .icon{
-  max-height: 880px;
+  max-height: 680px;
 }
 .example p{
   position: absolute;
@@ -185,7 +185,6 @@ h2:before {
 strong{
   p{
     max-width: 100px;
-    background: linear-gradient(transparent 70%, #ff99ab 70%);
   }
 }
 .recipe_img{
@@ -202,8 +201,8 @@ strong{
   border-top: 6px solid #1dc1d6;
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
   line-height: 2.0;
-
   p{
+    font-size: 1.4rem;
     padding: 10px;
   }
 }
