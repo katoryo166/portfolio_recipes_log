@@ -24,5 +24,6 @@ RSpec.describe User, type: :model do
          expect(user.errors[:name]).to include("が入力されていません。")
       end
     end
+
   end
 end

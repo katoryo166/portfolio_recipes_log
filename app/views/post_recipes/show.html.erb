@@ -79,7 +79,7 @@
                   <%= post_comment.comment %>
                   <div class=" text-right">
                     <% if post_comment.user == current_user %>
-                      <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete %>
+                      <%= link_to "削除", post_recipe_post_comment_path(post_comment.post_recipe, post_comment), method: :delete,class:"btn btn-outline-danger" %>
                     <% end %>
                   </div>
                 </div>
