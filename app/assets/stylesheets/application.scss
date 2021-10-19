@@ -104,7 +104,7 @@ h2:before {
 
 /*トップページ*/
 .jumbotron{
-  background: url(main.jpg) center no-repeat;
+  background-image: image-url("main.jpg") center no-repeat;
   position: relative;
   width: 100%;
   background-position: 100%;
