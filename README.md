@@ -26,7 +26,15 @@ ER図 <https://drive.google.com/file/d/165hI0Nx-qnlARy6GOfLX1bqmD1h2J6rd/view?us
 <https://docs.google.com/spreadsheets/d/1q71ynNRT0uZN5rcGCbWOVlelaS1APZf8qNbp7_FfUCE/edit?usp=sharing>
 
 ## 開発環境
-ruby/Ruby on Rails/html/scss/javascript/MySQL/Github/AWS
+ruby/Ruby on Rails/html/scss/javascript/dotenv-rails/mysql2/Github/AWS
+
+### pushするファイル
+  Gemfile
+  Gemfile.lock
+  config/puma.rb
+  config/database.yml
+  .gitignore
+
 
 ## 使用素材
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
