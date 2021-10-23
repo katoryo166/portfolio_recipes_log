@@ -25,6 +25,9 @@ ER図 <https://drive.google.com/file/d/165hI0Nx-qnlARy6GOfLX1bqmD1h2J6rd/view?us
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/1q71ynNRT0uZN5rcGCbWOVlelaS1APZf8qNbp7_FfUCE/edit?usp=sharing>
 
+## 詳細設計
+<https://docs.google.com/spreadsheets/d/1sLCr5l0hJqzOML81by9SbJIgBEXxYRGb/edit?usp=sharing&ouid=109297305294690784075&rtpof=true&sd=true>
+
 ## 開発環境
 ruby/Ruby on Rails/html/scss/javascript/dotenv-rails/mysql2/Github/AWS
 
