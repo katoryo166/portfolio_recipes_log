@@ -19,7 +19,7 @@ class Admin::PostRecipesController < ApplicationController
     @genres = Genre.all
       if @post_recipe.update(post_recipe_params)
         flash[:notice] = "投稿を更新しました。"
-        redirect_to post_recipe_path(@post_recipe)
+        redirect_to admin_post_recipe_path(@post_recipe)
       else
         @genres = Genre.all
         render "edit"
@@ -29,7 +29,7 @@ class Admin::PostRecipesController < ApplicationController
   def destroy
     @post_recipe = PostRecipe.find(params[:id])
     @post_recipe.destroy
-    redirect_to post_recipes_path
+    redirect_to admin_post_recipes_path
   end
 
   def post_recipe_params
