@@ -32,6 +32,8 @@ class Admin::PostRecipesController < ApplicationController
     redirect_to admin_post_recipes_path
   end
 
+  private
+
   def post_recipe_params
     params.require(:post_recipe).permit(:title, :image, :genre_id, :ingredient, :post_introduction)
   end

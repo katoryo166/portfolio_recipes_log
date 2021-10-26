@@ -10,6 +10,7 @@ class PostRecipe < ApplicationRecord
     favorites.where(user_id: user.id).exists?
   end
 
+#投稿一覧検索
   def self.search(keyword)
     if keyword
       post_recipe = PostRecipe.joins(:user,:genre)
@@ -19,7 +20,6 @@ class PostRecipe < ApplicationRecord
       @post_recipes = PostRecipe.page(params[:page]).reverse_order
     end
   end
-
 
   attachment :image
 
