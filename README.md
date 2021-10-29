@@ -2,7 +2,8 @@
 
 ## サイト概要
 簡単な料理レシピを発信・共有・確認することができます。
-いいね機能・コメント機能あり
+ログインすることでいいね機能・コメント機能あり、編集・削除は投稿したユーザーのみ
+未ログインでも一覧と詳細を見ることができます。
 このサイトを見ることで食事のメニューの参考にすることができます。
 
 ### サイトテーマ
@@ -43,3 +44,4 @@ ruby/Ruby on Rails/html/scss/javascript/dotenv-rails/mysql2/Github/AWS
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
 - - ぱくたそ<https://www.pakutaso.com/photo/20282.html>
 - - ぱくたそ<https://www.pakutaso.com/photo/74283.html>
+- - designevo<https://www.designevo.com/>
