@@ -1,5 +1,5 @@
 class PostRecipesController < ApplicationController
-   before_action :authenticate_user!, only: [:new,:create]
+   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
 
   def create
     @post_recipe = PostRecipe.new(post_recipe_params)
