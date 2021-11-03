@@ -34,7 +34,9 @@ class PostRecipesController < ApplicationController
     if current_user == @post_recipe.user
       render "edit"
     else
-      redirect_to post_recipe_path(@post_recipe)
+      unless @post_recipe.user_id == current_user.id
+        redirect_to post_recipe_path(@post_recipe)
+      end
     end
   end
 
