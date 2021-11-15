@@ -40,10 +40,30 @@
           <%= yield %>
         </div>
       <% end %>
-      <div id="page_top"><a href=""><%= image_tag asset_path('page_top.png') %></a></div>
+      <div id="page_top"><a href="#"><%= image_tag asset_path('page_top.png'), data: {"turbolinks" => false} %></a></div>
       <footer class="bg-info">
         <p>CopyRight</p>
       </footer>
     </div>
+    <script>
+      $("turbolinks:load",function(){
+        var pagetop = $('#page_top');
+        // ボタン非表示
+        pagetop.hide();
+
+        // 100px スクロールしたらボタン表示
+        $(window).scroll(function () {
+           if ($(this).scrollTop() > 200) {
+                pagetop.fadeIn();
+           } else {
+                pagetop.fadeOut();
+           }
+        });
+        pagetop.click(function () {
+           $('body, html').animate({ scrollTop: 0 }, 500);
+           return false;
+        });
+      });
+    </script>
   </body>
 </html>
