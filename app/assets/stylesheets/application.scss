@@ -26,6 +26,12 @@
 
 body {
   background-image: image-url("hoge.jpg");
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
 }
 
 header nav  a{
@@ -101,6 +107,7 @@ h2 {
   position: relative;
   padding: 1rem 2rem;
   border-bottom: 6px solid #094;
+  font-family: "游ゴシック", Helvetica , sans-serif;
 }
 
 h2:before {
