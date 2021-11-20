@@ -41,7 +41,8 @@
         </div>
       <% end %>
       <div id="page_top"><a href="#"><%= image_tag asset_path('page_top.png'), data: {"turbolinks" => false} %></a></div>
-      <footer class="bg-info">
+      <footer id="footer" class="bg-info">
+        <%= render 'layouts/footer' %>
         <p>CopyRight</p>
       </footer>
     </div>
