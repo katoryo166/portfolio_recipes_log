@@ -1,21 +1,19 @@
 class Admin::PostRecipesController < ApplicationController
   before_action :authenticate_admin!
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @post_recipes = PostRecipe.all
   end
 
   def show
-    @post_recipe = PostRecipe.find(params[:id])
   end
 
   def edit
-    @post_recipe = PostRecipe.find(params[:id])
     @genres = Genre.all
   end
 
   def update
-    @post_recipe = PostRecipe.find(params[:id])
     @genres = Genre.all
       if @post_recipe.update(post_recipe_params)
         flash[:notice] = "投稿を更新しました。"
@@ -27,9 +25,12 @@ class Admin::PostRecipesController < ApplicationController
   end
 
   def destroy
-    @post_recipe = PostRecipe.find(params[:id])
     @post_recipe.destroy
     redirect_to admin_post_recipes_path
+  end
+
+  def set_article
+    @post_recipe = PostRecipe.find(params[:id])
   end
 
   private

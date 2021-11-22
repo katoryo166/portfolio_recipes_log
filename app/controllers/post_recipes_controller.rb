@@ -1,5 +1,7 @@
 class PostRecipesController < ApplicationController
    before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
+   before_action :set_article, only: [:show, :edit, :update, :destroy]
+
 
   def create
     @post_recipe = PostRecipe.new(post_recipe_params)
@@ -19,7 +21,6 @@ class PostRecipesController < ApplicationController
   end
 
   def show
-    @post_recipe = PostRecipe.find(params[:id])
     @post_comment = PostComment.new
   end
 
@@ -29,7 +30,6 @@ class PostRecipesController < ApplicationController
   end
 
   def edit
-    @post_recipe = PostRecipe.find(params[:id])
     @genres = Genre.all
     if current_user == @post_recipe.user
       render "edit"
@@ -41,7 +41,6 @@ class PostRecipesController < ApplicationController
   end
 
   def update
-    @post_recipe = PostRecipe.find(params[:id])
     @genres = Genre.all
       if @post_recipe.update(post_recipe_params)
         flash[:notice] = "投稿を更新しました。"
@@ -53,7 +52,6 @@ class PostRecipesController < ApplicationController
   end
 
   def destroy
-    @post_recipe = PostRecipe.find(params[:id])
     @post_recipe.destroy
     redirect_to post_recipes_path
   end
@@ -62,6 +60,10 @@ class PostRecipesController < ApplicationController
     @post_recipes = PostRecipe.search(params[:keyword]).page(params[:page]).reverse_order
     @keyword = params[:keyword]
     render "index"
+  end
+
+  def set_article
+    @post_recipe = PostRecipe.find(params[:id])
   end
 
   private

@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-    before_action :authenticate_user!, only: [:new,:create]
+    before_action :authenticate_user!, only: [:new, :create]
+    before_action :set_user, only: [:show, :edit, :update, :destroy, :favorite_lists]
 
   def show
-    @user = User.find(params[:id])
     @post_recipes = @user.post_recipes.all
   end
 
@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
       if @user.update(user_params)
         flash[:notice] = "登録情報を変更しました。"
         redirect_to user_path(@user)
@@ -26,7 +25,6 @@ class UsersController < ApplicationController
   end
 
   def favorite_lists
-    @user = User.find(params[:id])
     @post_recipes = @user.post_recipes.all
   end
 
@@ -39,6 +37,10 @@ class UsersController < ApplicationController
     @user.update(is_active: false)
     reset_session
     redirect_to root_path
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
   private
