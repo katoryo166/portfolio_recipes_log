@@ -4,10 +4,10 @@ class PostRecipe < ApplicationRecord
   belongs_to :user
   belongs_to :genre
   has_many :post_comments, dependent: :destroy
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
 
-  def favorited_by?(user)
-    favorites.where(user_id: user.id).exists?
+  def favorited_by?(current_user)
+     favorites.where(user_id: current_user.id).exists?
   end
 
 #投稿一覧検索
