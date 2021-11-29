@@ -26,5 +26,6 @@ class PostRecipe < ApplicationRecord
   validates :title, presence:true, length:{minimum:2,maximim:20}
   validates :ingredient, presence:true, length:{ maximum: 100}
   validates :post_introduction, presence:true, length:{ maximum: 200}
+  validates :cook_time, numericality: { only_integer: true }
 
 end

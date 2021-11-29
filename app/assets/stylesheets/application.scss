@@ -121,7 +121,7 @@ h2:before {
 }
 
 /*トップページ*/
-.jumbotron{
+.jumbotron{ /*メインビジュアル*/
   background-image: image-url("main.jpg");
   position: relative;
   width: 100%;
@@ -171,6 +171,7 @@ h2:before {
   font-size: 2.0rem;
   margin: 0;
   padding: 0;
+  text-shadow: 0 0 5px #121;
 }
 
 .example img {
