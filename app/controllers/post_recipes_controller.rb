@@ -31,12 +31,10 @@ class PostRecipesController < ApplicationController
 
   def edit
     @genres = Genre.all
-    if current_user == @post_recipe.user
+    if @post_recipe.user == current_user
       render "edit"
     else
-      unless @post_recipe.user_id == current_user.id
-        redirect_to post_recipe_path(@post_recipe)
-      end
+      redirect_to post_recipe_path(@post_recipe)
     end
   end
 
@@ -52,8 +50,12 @@ class PostRecipesController < ApplicationController
   end
 
   def destroy
-    @post_recipe.destroy
-    redirect_to post_recipes_path
+    if @post_recipe.user == current_user
+      @post_recipe.destroy
+      redirect_to post_recipes_path
+    else
+      render "show"
+    end
   end
 
   def search

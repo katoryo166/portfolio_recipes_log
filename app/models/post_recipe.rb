@@ -10,7 +10,7 @@ class PostRecipe < ApplicationRecord
      favorites.where(user_id: current_user.id).exists?
   end
 
-#投稿一覧検索
+  #投稿一覧検索
   def self.search(keyword)
     if keyword
       post_recipe = PostRecipe.joins(:user,:genre)
