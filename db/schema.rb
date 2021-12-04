@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_29_222132) do
+ActiveRecord::Schema.define(version: 2021_12_04_222232) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 2021_11_29_222132) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "how_to_makes", force: :cascade do |t|
+    t.integer "pst_recipe_id"
+    t.text "explanation"
+    t.string "process_image"
+    t.integer "order_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pst_recipe_id"], name: "index_how_to_makes_on_pst_recipe_id"
+  end
+
   create_table "post_comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_recipe_id"
@@ -56,6 +66,15 @@ ActiveRecord::Schema.define(version: 2021_11_29_222132) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "cook_time"
+  end
+
+  create_table "recipe_infos", force: :cascade do |t|
+    t.integer "post_recipe_id"
+    t.string "ing_name"
+    t.string "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_recipe_id"], name: "index_recipe_infos_on_post_recipe_id"
   end
 
   create_table "users", force: :cascade do |t|

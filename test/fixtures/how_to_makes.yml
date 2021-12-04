@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pst_recipe: one
+  explanation: MyText
+  process_image: MyString
+  order_no: 1
+
+two:
+  pst_recipe: two
+  explanation: MyText
+  process_image: MyString
+  order_no: 1
