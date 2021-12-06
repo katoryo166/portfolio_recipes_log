@@ -26,6 +26,9 @@ class PostRecipesController < ApplicationController
 
   def new
     @post_recipe = PostRecipe.new
+    ##親モデル.子モデル.buildで子モデルのインスタンス作成
+    @recipe_infos = @post_recipe.recipe_infos.build
+    @how_to_makes = @post_recipe.how_to_makes.build
     @genres = Genre.all
   end
 
@@ -71,7 +74,8 @@ class PostRecipesController < ApplicationController
   private
 
   def post_recipe_params
-    params.require(:post_recipe).permit(:title, :image, :genre_id, :cook_time, :ingredient, :post_introduction)
+    params.require(:post_recipe).permit(:title, :image, :genre_id, :cook_time, :ingredient, :post_introduction,
+    recipe_infos_attributes:[:ing_name, :quantity, :_destroy], how_to_makes_attributes:[:explanation, :process_image, :order_no, :_destroy])
   end
 
 end

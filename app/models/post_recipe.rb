@@ -5,6 +5,9 @@ class PostRecipe < ApplicationRecord
   belongs_to :genre
   has_many :post_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :recipe_infos, dependent: :destroy
+  has_many :how_to_makes, dependent: :destroy
+  accepts_nested_attributes_for :recipe_infos, :how_to_makes, allow_destroy: true
 
   def favorited_by?(current_user)
      favorites.where(user_id: current_user.id).exists?

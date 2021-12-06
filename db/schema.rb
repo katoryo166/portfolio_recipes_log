@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_04_222232) do
+ActiveRecord::Schema.define(version: 2021_12_04_222805) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 2021_12_04_222232) do
   end
 
   create_table "how_to_makes", force: :cascade do |t|
-    t.integer "pst_recipe_id"
+    t.integer "post_recipe_id"
     t.text "explanation"
     t.string "process_image"
     t.integer "order_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pst_recipe_id"], name: "index_how_to_makes_on_pst_recipe_id"
+    t.index ["post_recipe_id"], name: "index_how_to_makes_on_post_recipe_id"
   end
 
   create_table "post_comments", force: :cascade do |t|
