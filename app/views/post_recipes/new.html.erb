@@ -2,7 +2,7 @@
   <div class="col-12 col-xs-5">
     <h2>投稿フォーム</h2>
     <p id ="notice" class="text-success" ><%= flash[:notice] %></p>
-    <%= form_with model:@post_recipe, url:post_recipes_path, local:true do |f| %>
+    <%= form_with(model: @post_recipe, local: true) do |f| %>
       <%= render "layouts/error_messages", model: @post_recipe %>
       <div class="col-xs-5">
         <div class="form_group col-md-12">
@@ -16,7 +16,11 @@
           <%= f.collection_select(:genre_id, @genres, :id, :name, class: "form-control col-sm-9")%>
         </div>
         <%= render 'post_recipes/form', f: f %>
+        <div class="how_to_makes">
+          <%= f.fields_for :how_to_makes, @post_recipe.how_to_makes.build do |t| %>
 
+          <% end %>
+        </div>
       <div class="how_to_makes">
       <div id="detail-association-insertion-point"></div>
 

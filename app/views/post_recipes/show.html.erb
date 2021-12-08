@@ -39,6 +39,15 @@
           <p><%= @post_recipe.post_introduction %></p>
         </div>
       </section>
+      <!--how_to_makes表示-->
+      <% @post_recipe.how_to_makes.each do |how_to_make| %>
+        <section class="post_introduction row mx-md-n5">
+          <div class="col py-3 px-md-5 ">
+            <span>その他・手順 <i class="far fa-lightbulb"></i></span>
+            <p><%= how_to_make.explanation %></p>
+          </div>
+        </section>
+      <% end %>
 
   </div>
   <div class="col-12 col-md-10 col-xs-10 offset-md-1">
