@@ -9,9 +9,9 @@ ja:
       post_recipe:
         title: タイトル
         genre: ジャンル
+        cook_time: 調理時間
         ingredient: 材料
         post_introduction: 作り方
-        cook_time: 調理時間
       genre:
         name: ジャンル名
 
