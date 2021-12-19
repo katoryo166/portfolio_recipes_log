@@ -8,6 +8,7 @@
         <tr>
           <th>タイトル</th>
           <th>投稿者</th>
+          <th><span class="favorite_heart">♥</span></th>
         </tr>
       </therd>
       <% current_user.favorites.each do |favorite| %>
@@ -22,6 +23,9 @@
             <%= link_to user_path(favorite.post_recipe.user.id) do %>
               <%= favorite.post_recipe.user.name %>
             <% end %>
+          </td>
+          <td>
+            <%= favorite.post_recipe.favorites.count %>
           </td>
         </tr>
       </tbody>
