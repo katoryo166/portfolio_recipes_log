@@ -8,7 +8,7 @@
 
 <div class="row">
   <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xs-5">
-    <div class="recipe_img mt-3"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "300x300"%></div>
+    <div class="recipe_img mt-3"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "300x280"%></div>
   </div>
 
   <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xs-5">
@@ -88,8 +88,8 @@
       <div class="comments">
         <p>コメント件数: <%= @post_recipe.post_comments.count %></p>
         <% @post_recipe.post_comments.each do |post_comment| %>
-        <div class="comment_text bg-light row mx-md-n5">
-            <div class="col py-3 px-md-5 ">
+        <div class="comment_text bg-light row mx-md-n5 mt-3">
+            <div class="col py-3 px-md-5">
               <%= link_to user_path(post_comment.user.id) do %><%= post_comment.user.name %><% end %>
               <%= post_comment.created_at.strftime('%Y/%m/%d') %><br />
               <%= post_comment.comment %>

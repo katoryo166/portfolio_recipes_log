@@ -18,7 +18,7 @@
         <%= render 'post_recipes/form', f: f %>
         <div class="how_to_makes">
           <%= f.fields_for :how_to_makes, @post_recipe.how_to_makes.build do |t| %>
-
+            
           <% end %>
         </div>
       <div class="how_to_makes">
