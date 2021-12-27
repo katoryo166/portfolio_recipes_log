@@ -154,7 +154,6 @@ h2:before {
 /*aboutページ*/
 .example{
   position: relative;
-  max-width: 1500px;
   margin: auto;
 
 }
@@ -198,35 +197,9 @@ select{
 }
 
 h4 {
-  position: relative;
-  padding: 8px 15px;
-  margin-left: 40px;
-  background: #def3ff;
-  border-radius: 20px;
+  padding: 0.1rem 2rem;
+  border-left: 4px solid #333;
 }
-
-h4:before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f111";
-  font-weight: 900;
-  position: absolute;
-  font-size: 15px;
-  left: -40px;
-  bottom: 0;
-  color: #def3ff;
-}
-
-h4:after {
-  font-family: "Font Awesome 5 Free";
-  content: "\f111";
-  font-weight: 900;
-  position: absolute;
-  font-size: 23px;
-  left: -23px;
-  bottom: 0;
-  color: #def3ff;
-}
-
 /*投稿*/
 .card {
   margin: 20px auto;
