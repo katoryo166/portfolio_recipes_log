@@ -1,7 +1,17 @@
 <div class="row">
   <div class="col-12 col-md-10 col-lg-10 col-xs-5 offset-md-1">
     <h2>投稿一覧</h2>
-    <p id ="notice" class="text-success" ><%= flash[:notice] %></p>
+    <p id ="notice" class="text-success"><%= flash[:notice] %></p>
+    <div class="search_form col-xs-5 mx-auto">
+      <%= form_with url: admin_retrieval_path, method: :get, local: true do |f| %>
+        <div class="input-group">
+          <%= f.text_field :keyword, value: @keyword, :placeholder => "検索" ,class:"form-control input-group-prepend" %>
+          <span id="btn-search" class="input-group-btn input-group-append">
+            <%= f.submit "検索", class:"btn btn-primary"%>
+          </span>
+        </div>
+      <% end %>
+    </div>
     <table class="table  table-bordered table-condensed bg-white">
       <thead>
         <tr>

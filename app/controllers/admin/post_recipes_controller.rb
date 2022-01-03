@@ -29,6 +29,12 @@ class Admin::PostRecipesController < ApplicationController
     redirect_to admin_post_recipes_path
   end
 
+  def retrieval
+    @post_recipes = PostRecipe.retrieval(params[:keyword])
+    @keyword = params[:keyword]
+    render "index"
+  end
+
   def set_article
     @post_recipe = PostRecipe.find(params[:id])
   end

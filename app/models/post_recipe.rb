@@ -23,6 +23,16 @@ class PostRecipe < ApplicationRecord
     end
   end
 
+  def self.retrieval(keyword)
+    if keyword
+      post_recipe = PostRecipe.joins(:user,:genre)
+      post_recipe.where(["title like? OR cook_time like? OR ingredient like? OR post_introduction like?", "%#{keyword}%","%#{keyword}%",
+      "%#{keyword}%","%#{keyword}%"]).or(post_recipe.where("users.name like?", "%#{keyword}%")).or(post_recipe.where("genres.name like?", "%#{keyword}%"))
+    else
+      @post_recipes = PostRecipe.all
+    end
+  end
+
   attachment :image
 
   validates :title, presence:true, length:{minimum:2,maximim:20}
