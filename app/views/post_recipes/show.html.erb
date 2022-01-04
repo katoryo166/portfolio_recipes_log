@@ -6,9 +6,9 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row offset-md-1">
   <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xs-5">
-    <div class="recipe_img mt-3"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "300x280"%></div>
+    <div class="recipe_img mt-3"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", class: "img-fluid" %></div>
   </div>
 
   <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xs-5">
@@ -25,8 +25,8 @@
     </div>
   </div>
 
-  <div class=" col-md-10 col-xs-10 offset-md-1">
-    <div class=" bg-light col-lg-2 col-md-4 col-sm-8 rounded-pill h-100">
+  <div class=" col-md-10 col-xs-5">
+    <div class=" bg-light col-lg-3 col-md-5 col-sm-8 rounded-pill h-100">
     <strong class="text-center">
       <% if user_signed_in? %>
         <% if @post_recipe.favorited_by?(current_user) %>
@@ -53,37 +53,36 @@
     </div>
   </div>
 
-    <div class="col-12 col-md-10 col-xs-10 offset-md-1">
+    <div class="col-12 col-md-10 col-xs-5">
       <h3 class=" col-xs-10">作り方</h3>
       <div class="ingredient row mx-md-n5">
-        <div class="col py-3 px-md-5">
+        <div class="col py-4 px-md-5">
           <span>材料 <i class="fas fa-fish"></i></span>
           <p><%= @post_recipe.ingredient %></p>
         </div>
       </div>
 
-      <section class="post_introduction row mx-md-n5">
-        <div class="col py-3 px-md-5 ">
+      <section class="post_introduction row mx-md-n5 mt-5">
+        <div class="col py-4 px-md-5 ">
           <span>ポイント <i class="far fa-lightbulb"></i></span>
           <p><%= @post_recipe.post_introduction %></p>
         </div>
       </section>
       <!--how_to_makes表示-->
       <% @post_recipe.how_to_makes.each do |how_to_make| %>
-        <section class="post_introduction row mx-md-n5">
-          <div class="col py-3 px-md-5 ">
+        <section class="post_introduction row mx-md-n5 mt-5 ">
+          <div class="col py-4 px-md-5 ">
             <span>その他・手順 <i class="far fa-lightbulb"></i></span>
             <p><%= how_to_make.explanation %></p>
           </div>
         </section>
       <% end %>
-
-  </div>
+    </div>
 
 </div>
 
-<div class="row">
-  <div class="col-12 col-md-10 col-xs-12 offset-md-1">
+<div class="row offset-md-1">
+  <div class="col-12 col-md-10 col-xs-12 offset-md-1 mt-5">
     <section>
       <div class="comments">
         <p>コメント件数: <%= @post_recipe.post_comments.count %></p>
@@ -109,10 +108,6 @@
             <%= f.submit "送信する", class:"btn btn-success" %>
           </div>
         <% end %>
-      </div>
-
-      <div class="col-12 col-md-10 col-xs-5 offset-md-1">
-
       </div>
     </section>
   </div>

@@ -2,49 +2,27 @@
   <div class="col-12 col-md-10 col-xs-5 offset-md-1">
     <h2>投稿詳細</h2>
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
-    <div class="form_group">
-    <%= link_to "投稿を編集", edit_admin_post_recipe_path, class:"btn btn-success btn-sm" %>
-    <%= link_to "削除", admin_post_recipe_path(@post_recipe), method: :delete, "data-confirm" => "本当に削除しますか？ " , class:"btn btn-danger btn-sm" %>
-    </div>
   </div>
 </div>
 
-<div class="row">
-    <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xs-5">
-      <div class="recipe_img"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "300x250"%></div>
-    </div>
-    <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xs-5">
+<div class="row offset-md-1">
+  <div class="col-10 col-sm-8 col-md-6 col-lg-4 col-xs-5">
+    <div class="recipe_img mt-3"><%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", class: "img-fluid" %></div>
+  </div>
+  <div class="col-12 col-sm-12 col-md-5 col-lg-6 col-xs-5">
     <h5 class="mt-3 ml-2">タイトル: <%= @post_recipe.title %></h5>
     <div class="mt-3 ml-2">難易度ジャンル: <%=@post_recipe.genre.name %></div>
     <div class="mt-3 ml-2">調理時間: <%=@post_recipe.cook_time %>分</div>
     <div class="mt-3 ml-2">投稿者: <%= link_to user_path(@post_recipe.user), class:"text-primary" do %><%= @post_recipe.user.name %><% end %></div>
     <div class="mt-3 ml-2">投稿作成：<%= @post_recipe.created_at.strftime('%Y/%m/%d') %></div>
+    <div class="mt-3 ml-2">
+      <%= link_to "投稿を編集", edit_admin_post_recipe_path, class:"btn btn-success btn-sm" %>
+      <%= link_to "削除", admin_post_recipe_path(@post_recipe), method: :delete, "data-confirm" => "本当に削除しますか？ " , class:"btn btn-danger btn-sm" %>
+    </div>
   </div>
-
-    <div class="col-12 col-md-10 col-xs-12 offset-md-1">
-      <h3 class=" col-xs-10">作り方</h3>
-      <div class="ingredient row mx-md-n5">
-        <div class="col py-3 px-md-5">
-        <span>材料 <i class="fas fa-fish"></i></span>
-        <p><%= @post_recipe.ingredient %></p>
-        </div>
-      </div>
-
-      <section class="post_introduction row mx-md-n5">
-        <div class="col py-3 px-md-5">
-          <span>ポイント <i class="far fa-lightbulb"></i></span>
-          <p><%= @post_recipe.post_introduction %></p>
-        </div>
-      </section>
-      <!--how_to_makes表示-->
-      <% @post_recipe.how_to_makes.each do |how_to_make| %>
-        <section class="post_introduction row mx-md-n5">
-          <div class="col py-3 px-md-5 ">
-            <span>その他・手順 <i class="far fa-lightbulb"></i></span>
-            <p><%= how_to_make.explanation %></p>
-          </div>
-        </section>
-      <% end %>
+  <div class=" col-md-10 col-xs-5">
+    <div class=" bg-light col-lg-3 col-md-5 col-sm-8 rounded-pill h-100">
+    <strong class="text-center">
       <% if user_signed_in? %>
         <% if @post_recipe.favorited_by?(current_user) %>
           <p>
@@ -65,6 +43,33 @@
               <span class="favorite_heart">♡</span><%= @post_recipe.favorites.count %> いいね
             <% end %>
           </p>
+      <% end %>
+      </strong>
+    </div>
+  </div>
+  <div class="col-12 col-md-10 col-xs-12 offset-md-1">
+    <h3 class=" col-xs-10">作り方</h3>
+    <div class="ingredient row mx-md-n5">
+      <div class="col py-3 px-md-5">
+        <span>材料 <i class="fas fa-fish"></i></span>
+        <p><%= @post_recipe.ingredient %></p>
+      </div>
+  </div>
+
+  <section class="post_introduction row mx-md-n5 mt-5">
+    <div class="col py-3 px-md-5">
+      <span>ポイント <i class="far fa-lightbulb"></i></span>
+      <p><%= @post_recipe.post_introduction %></p>
+    </div>
+  </section>
+      <!--how_to_makes表示-->
+      <% @post_recipe.how_to_makes.each do |how_to_make| %>
+        <section class="post_introduction row mx-md-n5">
+          <div class="col py-3 px-md-5 ">
+            <span>その他・手順 <i class="far fa-lightbulb"></i></span>
+            <p><%= how_to_make.explanation %></p>
+          </div>
+        </section>
       <% end %>
   </div>
 </div>

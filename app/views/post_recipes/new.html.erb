@@ -13,12 +13,12 @@
       <div class="col-12 col-md-10 col-xs-12 col-lg-10">
         <div class="form_group col-md-12">
           <%= f.label:"難易度", class: "col-sm-3" %><br />
-          <%= f.collection_select(:genre_id, @genres, :id, :name, class: "form-control col-sm-9")%>
+          <%= f.collection_select(:genre_id, @genres, :id, :name, {:class => 'form-control col-sm-9'})%>
         </div>
         <%= render 'post_recipes/form', f: f %>
         <div class="how_to_makes">
           <%= f.fields_for :how_to_makes, @post_recipe.how_to_makes.build do |t| %>
-            
+
           <% end %>
         </div>
       <div class="how_to_makes">
