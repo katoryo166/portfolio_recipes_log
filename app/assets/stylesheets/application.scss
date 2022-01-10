@@ -213,7 +213,6 @@ strong{
   letter-spacing: 1px;
     p{
     font-size: 2rem;
-    // max-width: 100px;
   }
 }
 .recipe_img img{
@@ -226,13 +225,22 @@ strong{
 }
 
 /*テキスト枠組み*/
-.about_text, .ingredient, .post_introduction {
+.about_text {
   margin: 20px auto;
   background-color: #d7efff;
   border-top: 6px solid #1dc1d6;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);/*影*/
   line-height: 2.0;
   p{
+    font-size: 1.2rem;
+    padding: 5px;
+  }
+}
+.ingredient,.post_introduction{
+  word-wrap: break-word;
+  line-height: 1.5;
+  p{
+    margin: 20px auto;
     font-size: 1.2rem;
     padding: 5px;
   }
