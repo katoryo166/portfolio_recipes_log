@@ -83,7 +83,7 @@
   <div class="col-12 col-md-10 col-xs-5 mt-5">
     <section>
       <div class="comments mx-md-n5">
-        <h4>コメント件数: <%= @post_recipe.post_comments.count %></h4>
+        <h4> <i class="far fa-comment"></i> コメント件数: <%= @post_recipe.post_comments.count %></h4>
         <% @post_recipe.post_comments.each do |post_comment| %>
           <div class="comment_text bg-light row mx-md-n5 mt-5">
             <div class="col py-3 px-md-5">
