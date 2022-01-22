@@ -26,12 +26,8 @@
 
 body {
   background-image: image-url("hoge.jpg");
-  font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
+  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  letter-spacing: .8px;
 }
 
 header nav  a{
@@ -229,20 +225,10 @@ strong{
 }
 
 /*テキスト枠組み*/
-.about_text {
-  margin: 20px auto;
-  background-color: #d7efff;
-  border-top: 6px solid #1dc1d6;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);/*影*/
-  line-height: 2.0;
-  p{
-    font-size: 1.2rem;
-    padding: 5px;
-  }
-}
-.ingredient,.post_introduction{
+.ingredient,.post_introduction, .about_text{
   word-wrap: break-word;
-  line-height: 1.5;
+  line-height: 1.5em;
+  color: #222;
   p{
     margin: 20px auto;
     font-size: 1.2rem;
