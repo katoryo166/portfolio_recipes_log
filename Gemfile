@@ -80,6 +80,8 @@ gem 'font-awesome-sass', '~> 5.13'
 gem 'cocoon'
 gem 'jquery-rails'
 
+gem 'gretel'
+
 gem 'dotenv-rails'
 group :production do
   gem 'mysql2'

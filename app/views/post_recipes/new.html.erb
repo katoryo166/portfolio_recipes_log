@@ -1,4 +1,6 @@
 <div class="row border rounded bg-light">
+  <% breadcrumb :new_post_recipe %>
+  <%= breadcrumbs separator: ">" %>
   <div class="col-12 col-xs-5">
     <h2>投稿フォーム</h2>
     <p id ="notice" class="text-success" ><%= flash[:notice] %></p>
