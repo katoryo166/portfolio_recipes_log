@@ -98,6 +98,15 @@ a:link{
   }
 }
 
+/*パンくずリスト*/
+.pankuzu_list{
+  margin-left: 3vw;
+}
+
+.pankuzu_list a {
+  margin-right: 0.5vw;
+}
+
 /*見出し*/
 h2 {
   position: relative;

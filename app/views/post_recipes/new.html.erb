@@ -1,7 +1,7 @@
 <div class="row border rounded bg-light">
-  <% breadcrumb :new_post_recipe %>
-  <%= breadcrumbs separator: ">" %>
   <div class="col-12 col-xs-5">
+    <% breadcrumb :new_post_recipe %>
+    <%= breadcrumbs separator: ">", class:"pankuzu_list"  %>
     <h2>投稿フォーム</h2>
     <p id ="notice" class="text-success" ><%= flash[:notice] %></p>
     <%= form_with(model: @post_recipe, local: true) do |f| %>

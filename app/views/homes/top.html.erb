@@ -8,9 +8,9 @@
       </h3>
     </div>
   </div>
-  <%= link_to "トップページ", root_path %>
-  <% breadcrumb :root %>
    <div class="col-12 col-md-12 col-xs-5 col-lg-10">
+     <%= link_to "トップページ", root_path %>
+     <% breadcrumb :root, class:"pankuzu_list" %>
      <p id="notice" class="text-success"><%= flash[:notice] %></p>
     <h2>投稿一覧</h2>
   </div>

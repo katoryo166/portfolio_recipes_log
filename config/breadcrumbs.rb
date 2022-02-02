@@ -12,6 +12,16 @@ crumb :post_recipes do
   parent :root
 end
 
+crumb :post_recipe do
+  link "投稿詳細", post_recipe_path
+  parent :post_recipes
+end
+
+crumb :edit_post_recipe do
+  link "投稿編集", edit_post_recipe_path
+  parent :post_recipe
+end
+
 crumb :new_user_session do
   link "新規登録" ,new_user_session_path
   parent :root
@@ -25,6 +35,11 @@ end
 crumb :user do
   link "マイページ" ,user_session_path
   parent :user_session
+end
+
+crumb :edit_user do
+  link "情報編集" ,edit_user_path
+  parent :user
 end
 
 crumb :new_post_recipe do
