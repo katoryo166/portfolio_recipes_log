@@ -42,6 +42,11 @@ crumb :edit_user do
   parent :user
 end
 
+crumb :favorite_lists_users do
+  link "いいねした投稿" ,edit_user_path
+  parent :user
+end
+
 crumb :new_post_recipe do
   link "投稿フォーム" ,user_session_path
   parent :user
