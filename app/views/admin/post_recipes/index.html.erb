@@ -1,4 +1,6 @@
 <div class="row">
+  <% breadcrumb :admin_post_recipes %>
+  <%= breadcrumbs separator: ">" , class:"pankuzu_list" %>
   <div class="col-12 col-md-10 col-lg-10 col-xs-5 offset-md-1">
     <h2>投稿一覧</h2>
     <p id ="notice" class="text-success"><%= flash[:notice] %></p>

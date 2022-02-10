@@ -1,4 +1,6 @@
 <div class="row">
+  <% breadcrumb :edit_admin_user %>
+  <%= breadcrumbs separator: ">" , class:"pankuzu_list" %>
   <div class="col-12 col-md-10 col-lg-10 col-xs-5 offset-md-1">
     <h2>アカウント情報編集</h2>
     <%= render "layouts/error_messages", model: @user %>

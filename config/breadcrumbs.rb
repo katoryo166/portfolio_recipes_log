@@ -1,7 +1,7 @@
 crumb :root do
   link "トップページ", root_path
 end
-
+##ユーザー
 crumb :homes_about do
   link "About", homes_about_path
   parent :root
@@ -50,6 +50,52 @@ end
 crumb :new_post_recipe do
   link "投稿フォーム" ,user_session_path
   parent :user
+end
+
+##管理者
+crumb :admin_session do
+  link "管理者ログイン" ,admin_session_path
+  parent :root
+end
+
+crumb :admin_post_recipes do
+  link "投稿一覧", admin_post_recipes_path
+  parent :admin_session
+end
+
+crumb :admin_post_recipe do
+  link "投稿詳細", admin_post_recipe_path
+  parent :admin_post_recipes
+end
+
+crumb :edit_admin_post_recipe do
+  link "投稿編集", edit_admin_post_recipe_path
+  parent :admin_post_recipe
+end
+
+crumb :admin_users do
+  link "アカウント一覧", admin_users_path
+  parent :admin_session
+end
+
+crumb :admin_user do
+  link "アカウント詳細", admin_user_path
+  parent :admin_users
+end
+
+crumb :edit_admin_user do
+  link "アカウント編集", edit_admin_user_path
+  parent :admin_user
+end
+
+crumb :admin_genres do
+  link "ジャンル一覧", admin_genres_path
+  parent :admin_session
+end
+
+crumb :edit_admin_genre do
+  link "ジャンル編集", edit_admin_genre_path
+  parent :admin_genres
 end
 
 # crumb :projects do
