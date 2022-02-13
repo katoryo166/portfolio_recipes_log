@@ -1,0 +1,29 @@
+
+PostRecipe
+  #PostRecipe
+    タイトル、Id、材料、があるとき
+[31m      有効である (FAILED - 1)[0m
+    名前がないとき
+[32m      無効である[0m
+
+User
+  #User
+    名前、メール、パスワードがあるとき
+[32m      有効である[0m
+    名前がないとき
+[32m      無効である[0m
+
+Failures:
+
+  1) PostRecipe#PostRecipe タイトル、Id、材料、があるとき 有効である
+     [31mFailure/Error: [0m[32mexpect[0m(post_recipe).to be_valid[0m
+     [31m  expected #<PostRecipe id: nil, user_id: 1, genre_id: nil, title: "title", image_id: nil, ingredient: "text", post_introduction: "text_area", date_day: nil, created_at: nil, updated_at: nil, cook_time: nil> to be valid, but got errors: 調理時間は数値で入力してください[0m
+     [36m# ./spec/models/post_recipe_spec.rb:15:in `block (4 levels) in <top (required)>'[0m
+
+Finished in 0.79361 seconds (files took 5.54 seconds to load)
+[31m4 examples, 1 failure[0m
+
+Failed examples:
+
+[31mrspec ./spec/models/post_recipe_spec.rb:6[0m [36m# PostRecipe#PostRecipe タイトル、Id、材料、があるとき 有効である[0m
+

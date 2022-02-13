@@ -24,6 +24,27 @@ RSpec.describe User, type: :model do
          expect(user.errors[:name]).to include("が入力されていません。")
       end
     end
-
+    context 'メールアドレスがないとき' do
+      it "無効である" do
+        user = User.new(
+         name: "tarou",
+         email: nil,
+         password: "password"
+         )
+         user.valid?
+         expect(user.errors[:email]).to include("が入力されていません。")
+      end
+    end
+    context 'パスワードがないとき' do
+      it "無効である" do
+        user = User.new(
+         name: "tarou",
+         email: "testman@example.com",
+         password: nil
+         )
+         user.valid?
+         expect(user.errors[:password]).to include("が入力されていません。")
+      end
+    end
   end
 end
