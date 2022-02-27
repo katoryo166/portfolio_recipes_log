@@ -1,7 +1,7 @@
-<div class="row">
-  <% breadcrumb :post_recipes %>
-  <%= breadcrumbs separator: ">" , class:"pankuzu_list" %>
+<div class="row rounded bg-light">
   <div class="col-12 col-md-10 col-lg-10 col-xs-5 offset-md-1">
+    <% breadcrumb :post_recipes %>
+  <%= breadcrumbs separator: ">" , class:"pankuzu_list" %>
     <h2>投稿一覧</h2>
     <div class="search_form col-xs-5 mx-auto">
       <%= form_with url: search_path, method: :get, local: true do |f| %>
@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row rounded bg-light">
   <%= render 'post_recipes/post_recipes', post_recipes: @post_recipes %>
 </div>
 <%= paginate @post_recipes %>
