@@ -1,7 +1,7 @@
-<div class="row">
-  <% breadcrumb :user_session %>
-  <%= breadcrumbs separator: ">" , class:"pankuzu_list" %>
+<div class="row  rounded bg-light">
   <div class="col-12 col-md-10 col-lg-10 col-xs-5 offset-md-1">
+    <% breadcrumb :user_session %>
+    <%= breadcrumbs separator: ">" , class:"pankuzu_list" %>
     <h2>管理者ログイン</h2>
     <p id ="notice" class="text-success" ><%= flash[:notice] %></p>
 

@@ -9,7 +9,7 @@
     <div class="mypage_img img-fluid"><%= attachment_image_tag @user, :account_image, fallback: "no_image.jpg", size: "200x200" %></div>
   </div>
   <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xs-5 ">
-    <table class="table table-condensed account">
+    <table class="table table-condensed account border-bottom">
       <tr>
         <th>名前</th>
         <td><%= @user.name %></td>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="row">
-  <div class="col-10 col-md-12 col-xs-5">
+  <div class="col-10 col-md-12 col-xs-5  mt-5">
     <% if @post_recipes.present? %>
     <h4>投稿一覧</h4>
     <% end %>
