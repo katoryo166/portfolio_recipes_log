@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  describe '#create' do
+    it 'is valid' do
+      user = build(:user)
+      user.valid?
+      expect(user).to be_valid
+    end
+  end
+
   describe '#User' do
     context '名前、メール、パスワードがあるとき' do
       it "有効である" do
@@ -46,5 +54,7 @@ RSpec.describe User, type: :model do
          expect(user.errors[:password]).to include("が入力されていません。")
       end
     end
+
+
   end
 end

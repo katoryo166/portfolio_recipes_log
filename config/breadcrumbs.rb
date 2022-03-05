@@ -53,6 +53,12 @@ crumb :new_post_recipe do
 end
 
 ##管理者
+
+crumb :new_admin_registration do
+  link "管理者サインアップ" ,new_admin_registration_path
+  parent :root
+end
+
 crumb :admin_session do
   link "管理者ログイン" ,admin_session_path
   parent :root
