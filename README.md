@@ -51,5 +51,6 @@ ruby/Ruby on Rails/html/scss/javascript/dotenv-rails/mysql2/Github/AWS
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
 - - ぱくたそ<https://www.pakutaso.com/photo/20282.html>
 - - ぱくたそ<https://www.pakutaso.com/photo/74283.html>
+- -  ぱくたそ<https://www.pakutaso.com/photo/75953.htmll>
 - - designevo<https://www.designevo.com/>
 - - Adobe Illustrator <https://www.adobe.com/jp/products/illustrator.html> スムーススクロール

@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-12 col-md-10 col-lg-8 col-xs-5">
     <div class="example ">
-      <%= image_tag 'about.jpg', class: 'icon img-fluid' %>
+      <div class="slide">
+        <div class="slide_list"><%= image_tag 'about.jpg', class: 'slide_img icon img-fluid' %></div>
+        <div class="slide_list"><%= image_tag 'main.jpg', class: 'slide_img icon img-fluid' %></div>
+        <div class="slide_list"><%= image_tag 'pumpkin.jpg', class: 'slide_img icon img-fluid' %></div>
+      </div>
       <p>ようこそRecipeLogへ</p>
     </div>
   </div>
@@ -36,4 +40,11 @@
   </div>
 </div>
 
+<script>
+  $("turbolinks:load", function() {
+    $('.slide').slick({
+       dots: true,
+     });
+    });
+</script>
 
