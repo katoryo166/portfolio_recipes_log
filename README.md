@@ -52,5 +52,7 @@ ruby/Ruby on Rails/html/scss/javascript/dotenv-rails/mysql2/Github/AWS
 - - ぱくたそ<https://www.pakutaso.com/photo/20282.html>
 - - ぱくたそ<https://www.pakutaso.com/photo/74283.html>
 - -  ぱくたそ<https://www.pakutaso.com/photo/75953.htmll>
+- -  ぱくたそ<https://www.pakutaso.com/photo/75951.html>
+- -  ぱくたそ<https://www.pakutaso.com/photo/16745.html>
 - - designevo<https://www.designevo.com/>
 - - Adobe Illustrator <https://www.adobe.com/jp/products/illustrator.html> スムーススクロール
