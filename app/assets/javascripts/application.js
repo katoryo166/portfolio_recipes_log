@@ -16,6 +16,14 @@
 
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 //= require cocoon
+/*global $*/
+
+$("turbolinks:load", function() {
+    $('.slide').slick({
+       dots: true,
+       autoplay: true,
+       autoplaySpeed: 5000,
+     });
+    });
