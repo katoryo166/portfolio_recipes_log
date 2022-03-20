@@ -188,6 +188,11 @@ h2:before {
   background-position: 100%;
   }
 
+.about_text p span {
+  position: relative;
+  background: linear-gradient(transparent 40%, yellow 30%);
+}
+
 /*アカウント詳細ページ*/
 .mypage_img{
   margin: 40px auto 0;

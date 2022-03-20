@@ -4,8 +4,9 @@
     <div class="card md-3">
       <div class="card-body">
         <%= attachment_image_tag post_recipe, :image ,format: 'jpeg', fallback: "no_image.jpg", class: "bd-placeholder-img card-img-top", size: "200x200" %>
-        <%= post_recipe.title %>
-        <p><%= post_recipe.genre.name %><br />
+        <p class="mt-2">
+          <%= post_recipe.title %><br />
+          <%= post_recipe.genre.name %><br />
           <span class="favorite_heart">♥</span> <%= post_recipe.favorites.count %>　<i class="far fa-comment"></i> <%= post_recipe.post_comments.count %>
         </p>
         </div>
