@@ -1,40 +1,26 @@
-<div class="row rounded bg-light">
+<div class="col-12 col-md-12 col-xs-5 col-lg-10 offset-lg-2">
   <% breadcrumb :favorite_lists_users %>
   <%= breadcrumbs separator: ">"  , class:"pankuzu_list" %>
-  <div class="col-12 col-md-12 col-xs-5 col-lg-10 offset-lg-2">
-  <h4>いいねした投稿</h4>
+  <h2 class="mt-2">いいねした投稿</h2>
 </div>
-  <div class="col-12  col-sm-12 col-md-10 col-lg-10 col-xs-5 offset-md-1">
-    <table class="table table-bordered table-condensed bg-white">
-      <therd>
-        <tr>
-          <th>タイトル</th>
-          <th>投稿者</th>
-          <th><span class="favorite_heart">♥</span></th>
-        </tr>
-      </therd>
-      <% current_user.favorites.each do |favorite| %>
-      <tbody>
-        <tr>
-          <td>
+<div class="row rounded bg-light">
+  <% current_user.favorites.each do |favorite| %>
+      <div class="col-12 col-sm-12 col-md-10 col-lg-4 mt-5">
+        <div class="card">
+          <div class="card-body">
+            <p>
+            <%= attachment_image_tag favorite.post_recipe, :image ,format: 'jpeg', fallback: "no_image.jpg", class: "bd-placeholder-img card-img-top", size: "200x200" %>
             <%= link_to post_recipe_path(favorite.post_recipe.id) do %>
-              <%= favorite.post_recipe.title %>
-            <% end %>
-          </td>
-          <td>
+                <%= favorite.post_recipe.title %>
+              <% end %><br />
             <%= link_to user_path(favorite.post_recipe.user.id) do %>
               <%= favorite.post_recipe.user.name %>
-            <% end %>
-          </td>
-          <td>
-            <%= favorite.post_recipe.favorites.count %>
-          </td>
-        </tr>
-      </tbody>
-      <% end %>
-    </table>
-    <div class="col-xs-5">
-      <%= link_to "マイページに戻る", user_path(@user), class:"btn btn-primary" %>
-    </div>
-  </div>
+            <% end %><br />
+            <%= favorite.post_recipe.genre.name %><br />
+            <span class="favorite_heart">♥</span> <%= favorite.post_recipe.favorites.count %>　<i class="far fa-comment"></i> <%= favorite.post_recipe.post_comments.count %>
+            </p>
+          </div>
+        </div>
+      </div>
+  <% end %>
 </div>
