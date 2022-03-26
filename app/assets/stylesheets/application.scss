@@ -214,6 +214,29 @@ h4 {
   padding: 0.1rem 2rem;
   border-left: 4px solid #333;
 }
+
+/*マイページアニメーション*/
+.bird{
+  width: 50%;
+  height: 50px;
+  height: auto;
+  margin: 20px auto ;
+  text-align: center;
+  position: relative;
+  -webkit-animation: bird 3s infinite linear alternate;
+  animation: bird 3s infinite linear alternate;
+}
+@-webkit-keyframes bird{
+    0%{transform: translate(0,0)rotate(-5deg);}
+  50%{transform: translate(0,-5px)rotate(0deg);}
+  100%{transform: translate(0,0)rotate(5deg);}
+}
+@keyframes bird{
+  0%{transform: translate(0,0)rotate(-5deg);}
+  50%{transform: translate(0,-5px)rotate(0deg);}
+ 100%{transform: translate(0,0)rotate(5deg);}
+}
+
 /*投稿*/
 .card {
   margin: 20px auto;
