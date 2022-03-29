@@ -50,19 +50,19 @@ $("turbolinks:load", function() {
     });
 
 
-
+/*birdアニメーション*/
 var pics_src = new Array("images/bird_img.gif", "images/bird.02_img.gif");
-              var num = -1;
+    var num = -1;
 
-              slideshow_timer();
+    slideshow_timer();
 
-              function slideshow_timer(){
-                  if (num == 1){
-                      num = 0;
-                  }
-                  else {
-                      num ++;
-                  }
-                  document.getElementById("mypic").src=pics_src[num];
-                  setTimeout("slideshow_timer()",3000);
-              }
+    function slideshow_timer(){
+            if (num == 1){
+                 num = 0;
+             }
+            else {
+                num ++;
+            }
+        document.getElementById("mypic").src=pics_src[num];
+        setTimeout("slideshow_timer()",3000);
+    }

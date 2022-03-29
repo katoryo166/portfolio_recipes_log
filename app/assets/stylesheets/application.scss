@@ -165,12 +165,12 @@ h2:before {
 .example{
   position: relative;
   margin: auto;
-
 }
+
 .icon{
   max-height: 680px;
 }
-.example p{
+.example p, .bird p{
   position: absolute;
   color: #333;
   top: 50%;
@@ -293,5 +293,3 @@ footer{
    position: absolute;
    bottom: 0;
 }
-
-
