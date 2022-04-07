@@ -12,7 +12,7 @@
           <%= f.attachment_field :image, class: "col-sm-9" %>
         </div>
       </div>
-      <div class="col-12 col-md-10 col-xs-12 col-lg-10">
+      <div class="col-12 col-md-10 col-lg-10 ">
         <div class="form_group col-md-12">
           <%= f.label:"難易度", class: "col-sm-3" %><br />
           <%= f.collection_select(:genre_id, @genres, :id, :name, {:class => 'form-control col-sm-9'})%>
@@ -20,21 +20,18 @@
         <%= render 'post_recipes/form', f: f %>
         <div class="how_to_makes">
           <%= f.fields_for :how_to_makes, @post_recipe.how_to_makes.build do |t| %>
-
           <% end %>
         </div>
       <div class="how_to_makes">
-      <div id="detail-association-insertion-point"></div>
-
-      <div class="form_group col-md-12 mx-auto mt-2">
-        <%= link_to_add_association "+フォームを追加", f, :how_to_makes,
-        data: {
-        association_insertion_node: '#detail-association-insertion-point',
-        association_insertion_method: 'after'
-        }%>
+        <div id="detail-association-insertion-point"></div>
+        <div class="form_group col-md-12 mx-auto mt-2">
+          <%= link_to_add_association "+フォームを追加", f, :how_to_makes,
+          data: {
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'after'
+          }%>
+        </div>
       </div>
-    </div>
-
         <div class="form_group col-md-12">
           <%= f.submit "投稿する", class:"btn btn-success" %>
         </div>
