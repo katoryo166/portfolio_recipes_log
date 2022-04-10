@@ -51,7 +51,7 @@ $("turbolinks:load", function() {
 
 
 /*birdアニメーション*/
-var pics_src = new Array("images/bird_img.gif", "images/bird.02_img.gif");
+var pics_src = new Array("images/bird_img.gif");
     var num = -1;
 
     slideshow_timer();

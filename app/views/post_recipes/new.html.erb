@@ -12,7 +12,7 @@
           <%= f.attachment_field :image, class: "col-sm-9" %>
         </div>
       </div>
-      <div class="col-12 col-md-10 col-lg-10 ">
+      <div class="col-12">
         <div class="form_group col-md-12">
           <%= f.label:"難易度", class: "col-sm-3" %><br />
           <%= f.collection_select(:genre_id, @genres, :id, :name, {:class => 'form-control col-sm-9'})%>

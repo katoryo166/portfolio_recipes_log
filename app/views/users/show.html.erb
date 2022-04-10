@@ -37,13 +37,13 @@
   </div>
 </div>
 <div class="bird">
-    <%= image_tag 'bird_img.gif',id: "mypic", class: 'icon img-fluid' %><br />
-    <p>MY PAGE</p>
-  </div>
+  <%= image_tag 'bird_img.gif',id: "mypic", class: 'icon img-fluid' %><br />
+  <p>MY PAGE</p>
+</div>
 <div class="row">
   <div class="col-10 col-md-12 col-xs-5  mt-5">
     <% if @post_recipes.present? %>
-    <h4>投稿一覧</h4>
+      <h4>投稿一覧</h4>
     <% end %>
   </div>
   <%= render 'post_recipes/post_recipes', post_recipes: @post_recipes %>
