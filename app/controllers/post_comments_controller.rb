@@ -9,7 +9,6 @@ class PostCommentsController < ApplicationController
     redirect_to post_recipe_path(post_recipe)
   end
 
-
   def destroy
     PostComment.find_by(id: params[:id], post_recipe_id: params[:post_recipe_id]).destroy
     redirect_to post_recipe_path(params[:post_recipe_id])
@@ -20,6 +19,5 @@ class PostCommentsController < ApplicationController
   def post_comment_params
     params.require(:post_comment).permit(:comment)
   end
-
 
 end
