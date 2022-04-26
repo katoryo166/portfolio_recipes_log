@@ -15,7 +15,6 @@ class Admin::GenresController < ApplicationController
       @genres = Genre.all
       render "index"
     end
-
   end
 
   def edit

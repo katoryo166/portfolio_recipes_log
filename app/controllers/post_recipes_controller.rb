@@ -2,7 +2,6 @@ class PostRecipesController < ApplicationController
    before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
    before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-
   def create
     @post_recipe = PostRecipe.new(post_recipe_params)
     @post_recipe.user = current_user
