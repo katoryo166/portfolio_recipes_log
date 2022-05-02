@@ -169,7 +169,7 @@ h2:before {
 .icon{
   max-height: 680px;
 }
-.example p, .bird p{
+.about_slide p, .bird p{
   position: absolute;
   color: #333;
   top: 50%;
@@ -182,15 +182,10 @@ h2:before {
   text-shadow: 0 0 5px #121;
 }
 
-.example img {
+.about_slide img {
   width: 100%;
   background-position: 100%;
   }
-
-.about_text p span {
-  position: relative;
-  background: linear-gradient(transparent 40%, yellow 30%);
-}
 
 /*アカウント詳細ページ*/
 .mypage_img{
