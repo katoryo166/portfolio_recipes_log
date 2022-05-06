@@ -6,7 +6,6 @@
     <p id="notice" class="text-success"><%= flash[:notice] %></p>
     <%= form_with model:@post_recipe, url:admin_post_recipe_path, local:true  do |f| %>
       <%= render "layouts/error_messages", model: @post_recipe %>
-
       <div class="form_group col-12">
         <div class="col-xs-5">
           <%= attachment_image_tag @post_recipe, :image, fallback: "no_image.jpg", size: "300x250"%>
